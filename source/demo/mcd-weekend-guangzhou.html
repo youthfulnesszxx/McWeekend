@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>周末不无聊计划 · 广州 | 麦当劳城市漫游手册</title>
+<style>
+  :root{
+    --red:#DA291C;
+    --red-deep:#A81C12;
+    --yellow:#FFC72C;
+    --dark:#27251F;
+    --ink:#3A362F;
+    --gray:#7A736A;
+    --cream:#FFFBF3;
+    --paper:#FFFFFF;
+    --line:#EAE1D2;
+    --green:#1F7A4D;
+    --shadow:0 2px 4px rgba(39,37,31,.04), 0 12px 32px rgba(39,37,31,.07);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:var(--cream);color:var(--ink);line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:"SF Mono",ui-monospace,Consolas,"Courier New",monospace;font-variant-numeric:tabular-nums}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;background:rgba(255,251,243,.9);
+    backdrop-filter:blur(14px);border-bottom:1px solid var(--line);
+  }
+  .nav-in{max-width:1080px;margin:0 auto;padding:0 24px;height:58px;display:flex;align-items:center;gap:28px}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:14px;letter-spacing:.02em;color:var(--dark)}
+  .brand .dot{width:22px;height:22px;border-radius:6px;background:var(--red);display:grid;place-items:center;color:var(--yellow);font-size:13px;font-weight:900}
+  .nav-links{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{
+    font-size:13px;color:var(--gray);text-decoration:none;padding:7px 13px;border-radius:99px;
+    white-space:nowrap;transition:.2s;font-weight:500;
+  }
+  .nav-links a:hover{background:#F3EBDE;color:var(--dark)}
+  .nav-links a.on{background:var(--dark);color:#fff}
+
+  /* ---------- HERO ---------- */
+  header.hero{position:relative;overflow:hidden;padding:76px 0 54px;border-bottom:1px solid var(--line)}
+  header.hero::before{
+    content:"";position:absolute;right:-140px;top:-140px;width:520px;height:520px;border-radius:50%;
+    background:radial-gradient(circle at 35% 35%,#FFE8A3,#FFC72C 55%,#F2B100);opacity:.34;filter:blur(2px);
+  }
+  header.hero::after{
+    content:"";position:absolute;left:-90px;bottom:-180px;width:340px;height:340px;border-radius:50%;
+    background:var(--red);opacity:.05;
+  }
+  .hero-in{position:relative;z-index:1}
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.14em;
+    color:var(--red);background:#FFF0EC;border:1px solid #F8D6CE;padding:6px 13px;border-radius:99px;margin-bottom:22px;
+  }
+  .kicker .live{width:6px;height:6px;border-radius:50%;background:var(--red);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+  h1{font-size:clamp(34px,5.4vw,60px);line-height:1.1;letter-spacing:-.025em;font-weight:900;color:var(--dark)}
+  h1 em{font-style:normal;color:var(--red);position:relative;white-space:nowrap}
+  h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.16em;background:var(--yellow);z-index:-1;opacity:.85}
+  .lede{font-size:clamp(15px,1.7vw,18px);color:var(--gray);max-width:620px;margin-top:20px;line-height:1.75}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:38px}
+  .stat{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+  .stat b{display:block;font-size:26px;font-weight:800;color:var(--dark);letter-spacing:-.02em;line-height:1.25}
+  .stat b span{font-size:13px;font-weight:600;color:var(--gray);margin-left:2px}
+  .stat small{font-size:11.5px;color:var(--gray);letter-spacing:.02em}
+
+  /* ---------- SECTION ---------- */
+  section{padding:74px 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:flex;align-items:flex-start;gap:18px;margin-bottom:14px}
+  .sec-num{
+    font-family:"SF Mono",Consolas,monospace;font-size:12px;font-weight:700;color:var(--red);
+    background:#FFF0EC;border-radius:8px;padding:7px 10px;letter-spacing:.06em;flex:none;margin-top:6px;
+  }
+  h2{font-size:clamp(24px,3.2vw,34px);font-weight:850;letter-spacing:-.02em;color:var(--dark);line-height:1.25}
+  .sec-sub{color:var(--gray);font-size:14.5px;margin-top:8px;max-width:660px}
+  .sec-body{margin-top:36px}
+
+  /* ---------- TABS ---------- */
+  .tabs{display:inline-flex;background:#F1E8DA;border-radius:12px;padding:4px;gap:2px;margin-bottom:26px}
+  .tabs button{
+    border:0;background:transparent;font:inherit;font-size:13.5px;font-weight:600;color:var(--gray);
+    padding:9px 18px;border-radius:9px;cursor:pointer;transition:.18s;
+  }
+  .tabs button.on{background:var(--paper);color:var(--dark);box-shadow:0 1px 3px rgba(39,37,31,.12)}
+  .pane{display:none;animation:fade .35s ease}
+  .pane.on{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  /* ---------- STORE CARD ---------- */
+  .stores{display:grid;gap:12px}
+  .store{
+    display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:center;
+    background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;
+    transition:.2s;box-shadow:0 1px 2px rgba(39,37,31,.03);
+  }
+  .store:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:#DCCFBB}
+  .store .idx{
+    width:44px;height:44px;border-radius:11px;background:linear-gradient(150deg,#FFF3D6,#FFE1A8);
+    display:grid;place-items:center;font-family:"SF Mono",Consolas,monospace;font-weight:800;font-size:14px;color:#8A6200;
+  }
+  .store.closed .idx{background:#EFEAE2;color:#9A9288}
+  .store h4{font-size:15px;font-weight:750;color:var(--dark);letter-spacing:-.01em}
+  .store .addr{font-size:12.5px;color:var(--gray);margin-top:3px}
+  .store .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+  .tag{font-size:11px;font-weight:600;padding:3px 8px;border-radius:6px;background:#F5EEE2;color:#7A6A50;letter-spacing:.01em}
+  .tag.hot{background:#FFF0EC;color:var(--red)}
+  .tag.time{background:#EAF3EE;color:var(--green)}
+  .tag.off{background:#F0EDE8;color:#8C857C}
+  .store .right{text-align:right;flex:none}
+  .store .dist{font-family:"SF Mono",Consolas,monospace;font-size:15px;font-weight:700;color:var(--dark)}
+  .store .code{font-family:"SF Mono",Consolas,monospace;font-size:10.5px;color:#A89E90;margin-top:2px}
+
+  /* ---------- INSIGHT ---------- */
+  .insights{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+  .insight{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .insight .k{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--red);margin-bottom:9px}
+  .insight p{font-size:13.5px;color:var(--ink);line-height:1.65}
+  .insight p b{color:var(--dark);font-weight:750}
+  .vs{display:flex;align-items:baseline;gap:8px;margin:10px 0 6px;font-family:"SF Mono",Consolas,monospace}
+  .vs .a{font-size:19px;font-weight:800;color:var(--dark)}
+  .vs .arrow{font-size:11px;color:var(--gray)}
+  .vs .b{font-size:19px;font-weight:800;color:var(--red)}
+
+  /* ---------- ROUTE ---------- */
+  .route{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px 26px;margin-top:18px}
+  .route h5{font-size:13px;font-weight:750;color:var(--dark);letter-spacing:.02em;display:flex;align-items:center;gap:8px;margin-bottom:18px}
+  .route h5::before{content:"";width:3px;height:14px;border-radius:2px;background:var(--red)}
+  .steps{display:grid;gap:0}
+  .step{display:grid;grid-template-columns:64px 1fr;gap:16px;position:relative;padding-bottom:18px}
+  .step:last-child{padding-bottom:0}
+  .step::before{
+    content:"";position:absolute;left:31px;top:24px;bottom:-2px;width:1px;
+    background:repeating-linear-gradient(to bottom,var(--line) 0 4px,transparent 4px 8px);
+  }
+  .step:last-child::before{display:none}
+  .step .t{
+    font-family:"SF Mono",Consolas,monospace;font-size:11.5px;font-weight:700;color:var(--red);
+    background:#FFF6F3;border:1px solid #F8DDD5;border-radius:7px;height:23px;display:grid;place-items:center;z-index:1;
+  }
+  .step .c strong{font-size:14px;color:var(--dark);font-weight:750;display:block}
+  .step .c span{font-size:13px;color:var(--gray);display:block;margin-top:2px}
+
+  /* ---------- TIMELINE ---------- */
+  .tl{display:grid;gap:9px;margin-top:6px}
+  .tl-row{
+    display:grid;grid-template-columns:88px 1fr auto;gap:16px;align-items:center;
+    background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:13px 16px;
+  }
+  .tl-row.today{border-color:#F3C6BC;background:linear-gradient(90deg,#FFF6F3,#FFFFFF 60%)}
+  .tl-date{font-family:"SF Mono",Consolas,monospace;font-size:12px;font-weight:700;color:var(--dark)}
+  .tl-row.today .tl-date{color:var(--red)}
+  .tl-title{font-size:13.5px;color:var(--ink);font-weight:600}
+  .tl-desc{font-size:12px;color:var(--gray);margin-top:2px}
+  .tl-price{font-family:"SF Mono",Consolas,monospace;font-size:12.5px;font-weight:700;color:var(--red);white-space:nowrap}
+
+  /* ---------- BURGER ---------- */
+  .burger-lab{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+  .burger-vis{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:28px 24px 24px;box-shadow:var(--shadow)}
+  .stack{display:flex;flex-direction:column;align-items:center;gap:2px;min-height:330px;justify-content:center}
+  .layer{
+    border-radius:99px;transition:.22s cubic-bezier(.2,.8,.3,1);cursor:default;position:relative;
+    display:grid;place-items:center;font-size:10.5px;font-weight:700;color:rgba(255,255,255,.95);letter-spacing:.02em;
+    box-shadow:0 1px 2px rgba(39,37,31,.16);
+  }
+  .layer:hover{transform:scaleX(1.07);filter:brightness(1.05)}
+  .layer span{opacity:0;transition:.2s;white-space:nowrap;padding:0 10px;text-shadow:0 1px 2px rgba(0,0,0,.18)}
+  .layer:hover span{opacity:1}
+  .l-bun{width:224px;height:26px;background:linear-gradient(180deg,#E8A64B,#D08A2A)}
+  .l-bun.top{width:224px;height:36px;border-radius:99px 99px 22px 22px;background:linear-gradient(180deg,#F0B45E,#D8902F)}
+  .l-bun.mid{width:198px;height:20px;background:linear-gradient(180deg,#E2A048,#CE8530);border-radius:8px}
+  .l-bun.bot{width:214px;height:24px;border-radius:16px 16px 99px 99px;background:linear-gradient(180deg,#D89440,#C07C28)}
+  .l-sauce{width:206px;height:11px;background:linear-gradient(90deg,#E8B94A,#D9A63B)}
+  .l-lettuce{width:216px;height:15px;background:linear-gradient(90deg,#7FBF5A,#5FA33C);border-radius:12px 12px 99px 99px}
+  .l-cheese{width:210px;height:12px;background:linear-gradient(90deg,#FFC93C,#F0A81E);border-radius:5px}
+  .l-patty{width:196px;height:20px;background:linear-gradient(180deg,#7A4B32,#5B3524);border-radius:8px}
+  .l-pickle{width:158px;height:9px;background:linear-gradient(90deg,#9CC24E,#7BA336);border-radius:99px}
+  .l-onion{width:178px;height:9px;background:linear-gradient(90deg,#E6D7E8,#CDB6D2);border-radius:99px}
+  .vis-note{text-align:center;font-size:11.5px;color:var(--gray);margin-top:18px;padding-top:16px;border-top:1px dashed var(--line)}
+
+  .nutri{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+  .nutri div{background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:11px 13px}
+  .nutri b{display:block;font-family:"SF Mono",Consolas,monospace;font-size:17px;font-weight:800;color:var(--dark)}
+  .nutri small{font-size:10.5px;color:var(--gray);letter-spacing:.03em}
+
+  .price-line{display:flex;align-items:baseline;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+  .price-line .now{font-family:"SF Mono",Consolas,monospace;font-size:30px;font-weight:800;color:var(--red);letter-spacing:-.02em}
+  .price-line .was{font-family:"SF Mono",Consolas,monospace;font-size:15px;color:#B4ABA0;text-decoration:line-through}
+  .price-line .off{font-size:11.5px;font-weight:700;background:#FFF0EC;color:var(--red);padding:3px 8px;border-radius:6px}
+
+  .recipe{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-top:18px}
+  .recipe-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}
+  .recipe-head h4{font-size:14.5px;font-weight:780;color:var(--dark);letter-spacing:-.01em}
+  .prog{font-family:"SF Mono",Consolas,monospace;font-size:11.5px;color:var(--gray)}
+  .prog b{color:var(--green)}
+  .checklist{display:grid;grid-template-columns:1fr 1fr;gap:2px 20px}
+  .ci{display:flex;align-items:flex-start;gap:9px;padding:7px 0;cursor:pointer;border-bottom:1px dashed #F0E9DC}
+  .ci input{appearance:none;width:16px;height:16px;border:1.5px solid #CFC5B4;border-radius:5px;flex:none;margin-top:3px;cursor:pointer;transition:.15s;position:relative}
+  .ci input:checked{background:var(--green);border-color:var(--green)}
+  .ci input:checked::after{content:"";position:absolute;left:4.5px;top:1px;width:4px;height:8px;border:2px solid #fff;border-top:0;border-left:0;transform:rotate(42deg)}
+  .ci span{font-size:13px;color:var(--ink);line-height:1.5}
+  .ci input:checked + span{color:#A9A096;text-decoration:line-through}
+  .ci em{font-style:normal;color:var(--gray);font-size:11.5px;display:block}
+
+  .fail{background:#FFFBF0;border:1px solid #F0E2C2;border-radius:12px;padding:16px 18px;margin-top:16px}
+  .fail h6{font-size:12px;font-weight:750;color:#8A6200;letter-spacing:.04em;margin-bottom:8px}
+  .fail ul{list-style:none;display:grid;gap:5px}
+  .fail li{font-size:12.5px;color:#6E5C36;padding-left:16px;position:relative}
+  .fail li::before{content:"×";position:absolute;left:2px;color:#C9A94E;font-weight:800}
+  .fail.good li::before{content:"✓";color:#2E8B57;font-size:11px}
+
+  /* ---------- COMBO GEN ---------- */
+  .gen{background:linear-gradient(160deg,#27251F,#3B372F);border-radius:18px;padding:30px;color:#fff;margin-top:22px;position:relative;overflow:hidden}
+  .gen::before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:var(--red);opacity:.22;filter:blur(30px)}
+  .gen-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px;position:relative}
+  .gen-head h4{font-size:17px;font-weight:800;letter-spacing:-.01em}
+  .gen-head p{font-size:12.5px;color:#B9B0A2;margin-top:3px}
+  .gen-head .price{font-family:"SF Mono",Consolas,monospace;font-size:15px;font-weight:800;color:var(--yellow)}
+  .combo{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;position:relative}
+  .slot{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:14px;padding:16px 18px;min-height:104px;display:flex;flex-direction:column;justify-content:center}
+  .slot .zone{font-size:10px;letter-spacing:.14em;color:var(--yellow);font-weight:700;margin-bottom:6px}
+  .slot .nm{font-size:16px;font-weight:750;line-height:1.3}
+  .slot .df{font-family:"SF Mono",Consolas,monospace;font-size:11.5px;color:#A79E8F;margin-top:6px}
+  .plus{font-size:22px;color:var(--yellow);font-weight:300;text-align:center}
+  .gen-actions{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap;position:relative}
+  .btn{
+    border:0;font:inherit;font-size:13px;font-weight:700;padding:11px 20px;border-radius:10px;cursor:pointer;transition:.18s;
+  }
+  .btn.primary{background:var(--yellow);color:var(--dark)}
+  .btn.primary:hover{background:#FFD75E;transform:translateY(-1px)}
+  .btn.ghost{background:rgba(255,255,255,.09);color:#EDE6DA;border:1px solid rgba(255,255,255,.15)}
+  .btn.ghost:hover{background:rgba(255,255,255,.15)}
+  .pool-stat{font-size:11.5px;color:#9C9385;margin-top:14px;position:relative}
+
+  /* ---------- HACK CARDS ---------- */
+  .hacks{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+  .hack{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;transition:.2s}
+  .hack:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+  .hack .no{font-family:"SF Mono",Consolas,monospace;font-size:10.5px;font-weight:700;color:#C0B6A6;letter-spacing:.1em}
+  .hack h5{font-size:14.5px;font-weight:780;color:var(--dark);margin:8px 0 7px;letter-spacing:-.01em}
+  .hack p{font-size:12.5px;color:var(--gray);line-height:1.6}
+  .hack .cost{font-family:"SF Mono",Consolas,monospace;font-size:12px;font-weight:700;color:var(--red);margin-top:11px;padding-top:11px;border-top:1px dashed var(--line)}
+
+  /* ---------- PRINCIPLES ---------- */
+  .principles{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .pr{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px 22px;position:relative;overflow:hidden}
+  .pr::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--yellow)}
+  .pr:nth-child(2n)::before{background:var(--red);opacity:.75}
+  .pr .n{font-family:"SF Mono",Consolas,monospace;font-size:10.5px;font-weight:700;color:#BDB3A2;letter-spacing:.1em}
+  .pr h5{font-size:14.5px;font-weight:800;color:var(--dark);margin:6px 0 8px;letter-spacing:-.01em}
+  .pr p{font-size:12.8px;color:var(--gray);line-height:1.68}
+  .pr p b{color:var(--ink);font-weight:700}
+  .pr .ev{margin-top:11px;padding-top:10px;border-top:1px dashed var(--line);font-size:11.5px;color:#8A7F6E}
+  .pr .ev code{font-family:"SF Mono",Consolas,monospace;background:#F6F1E7;padding:1px 5px;border-radius:4px;color:#6E6252;font-size:11px}
+
+  /* ---------- CALCULATOR ---------- */
+  .calc{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px;margin-top:22px;box-shadow:var(--shadow)}
+  .calc-top{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-end;margin-bottom:24px}
+  .field{flex:1;min-width:180px}
+  .field label{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--gray);margin-bottom:9px}
+  .seg{display:inline-flex;background:#F4EEE2;border-radius:10px;padding:3px;gap:2px;flex-wrap:wrap}
+  .seg button{
+    border:0;background:transparent;font:inherit;font-size:13px;font-weight:650;color:var(--gray);
+    padding:8px 15px;border-radius:8px;cursor:pointer;transition:.15s;font-family:"SF Mono",Consolas,monospace;
+  }
+  .seg button.on{background:var(--dark);color:#fff}
+  .calc-out{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .out-card{border:1px solid var(--line);border-radius:13px;padding:18px;background:#FFFDF8}
+  .out-card.best{border-color:#F3C6BC;background:linear-gradient(165deg,#FFF7F4,#FFFDF8);box-shadow:0 2px 10px rgba(218,41,28,.06)}
+  .out-card .lbl{font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--gray);display:flex;align-items:center;gap:6px}
+  .out-card .badge{font-size:9.5px;background:var(--red);color:#fff;padding:1.5px 6px;border-radius:4px;letter-spacing:.04em}
+  .out-card .big{font-family:"SF Mono",Consolas,monospace;font-size:27px;font-weight:800;color:var(--dark);letter-spacing:-.02em;margin:9px 0 2px}
+  .out-card .big small{font-size:12px;font-weight:600;color:var(--gray)}
+  .out-card .sub{font-size:11.5px;color:var(--gray);line-height:1.5}
+  .out-card ul{list-style:none;margin-top:11px;padding-top:11px;border-top:1px dashed var(--line);display:grid;gap:4px}
+  .out-card li{font-size:12px;color:var(--ink);display:flex;justify-content:space-between;gap:10px}
+  .out-card li i{font-style:normal;font-family:"SF Mono",Consolas,monospace;color:var(--gray);flex:none}
+
+  .saving{margin-top:16px;background:#EFF7F1;border:1px solid #D5E8DB;border-radius:12px;padding:14px 18px;font-size:13px;color:#1B6340;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .saving b{font-family:"SF Mono",Consolas,monospace;font-size:17px;font-weight:800}
+  .saving span{font-size:12px;color:#4A7D61}
+
+  /* ---------- BUDGET TABLE ---------- */
+  .btable{width:100%;border-collapse:separate;border-spacing:0 7px;margin-top:8px;font-size:13px}
+  .btable th{
+    text-align:left;font-size:10.5px;letter-spacing:.1em;color:var(--gray);font-weight:700;
+    padding:0 14px 6px;text-transform:uppercase;
+  }
+  .btable td{background:var(--paper);padding:14px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .btable tr td:first-child{border-left:1px solid var(--line);border-radius:11px 0 0 11px}
+  .btable tr td:last-child{border-right:1px solid var(--line);border-radius:0 11px 11px 0;text-align:right}
+  .btable tr:hover td{background:#FFFDF7}
+  .btable .nm{font-weight:700;color:var(--dark)}
+  .btable .nm span{display:block;font-weight:400;font-size:11.5px;color:var(--gray);margin-top:2px}
+  .btable .p{font-family:"SF Mono",Consolas,monospace;font-weight:800;color:var(--red);font-size:15px}
+  .btable .kcal{font-family:"SF Mono",Consolas,monospace;color:var(--gray);font-size:12px}
+  .pill{font-size:10.5px;font-weight:700;padding:2.5px 8px;border-radius:6px;background:#F3EEE4;color:#7A6C56;white-space:nowrap}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:52px 0 64px;background:#F7F0E4}
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px}
+  footer h6{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--gray);margin-bottom:12px}
+  footer p{font-size:12.5px;color:#7A736A;line-height:1.8}
+  footer p code{font-family:"SF Mono",Consolas,monospace;background:#EFE7D8;padding:1px 5px;border-radius:4px;font-size:11.5px;color:#5E5648}
+  .foot-note{font-size:11.5px;color:#9A9287;margin-top:16px;line-height:1.7}
+  .sig{margin-top:26px;padding-top:18px;border-top:1px solid #E5DAC7;font-size:11px;color:#A69D90;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+  /* ---------- START / CHOOSER ---------- */
+  #start{padding:54px 0 58px;background:linear-gradient(180deg,#FFFBF3 0%,#FAF1E0 100%);border-bottom:1px solid var(--line)}
+  .start-kicker{display:inline-flex;align-items:center;gap:7px;font-size:10.5px;font-weight:800;letter-spacing:.14em;color:var(--red);margin-bottom:12px}
+  .start-kicker::before{content:"";width:14px;height:2px;background:var(--red);border-radius:2px}
+  .start-head h2{font-size:clamp(22px,3vw,30px);font-weight:850;letter-spacing:-.02em;color:var(--dark);line-height:1.3}
+  .start-head p{font-size:13.5px;color:var(--gray);margin-top:8px;max-width:640px;line-height:1.7}
+  .step-row{display:grid;grid-template-columns:128px 1fr;gap:18px;align-items:start;padding:19px 0;border-top:1px dashed #E3D6C0}
+  .step-label{font-size:11.5px;font-weight:800;color:var(--dark);display:flex;align-items:center;gap:7px;padding-top:9px;letter-spacing:.02em}
+  .step-label b{font-family:"SF Mono",Consolas,monospace;font-size:10px;background:var(--dark);color:var(--yellow);padding:2px 6px;border-radius:5px}
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{
+    background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:9px 14px;cursor:pointer;
+    font:inherit;text-align:left;transition:.16s;display:flex;flex-direction:column;gap:1px;
+  }
+  .chip .n{font-size:13.5px;font-weight:750;color:var(--dark);letter-spacing:-.01em}
+  .chip .s{font-family:"SF Mono",Consolas,monospace;font-size:10px;color:var(--gray)}
+  .chip:hover{border-color:#D6C6AC;transform:translateY(-1px);box-shadow:0 2px 8px rgba(39,37,31,.05)}
+  .chip.on{background:var(--dark);border-color:var(--dark);box-shadow:0 3px 12px rgba(39,37,31,.18)}
+  .chip.on .n{color:#fff}
+  .chip.on .s{color:var(--yellow)}
+  .paths{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .path{
+    background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:14px 15px;cursor:pointer;
+    font:inherit;text-align:left;transition:.18s;position:relative;
+  }
+  .path .pno{font-family:"SF Mono",Consolas,monospace;font-size:10px;font-weight:800;color:#C6BCAB;letter-spacing:.1em}
+  .path h4{font-size:14.5px;font-weight:800;color:var(--dark);margin:7px 0 4px;letter-spacing:-.01em}
+  .path p{font-size:11.5px;color:var(--gray);line-height:1.5}
+  .path:hover{border-color:#D6C6AC;transform:translateY(-2px);box-shadow:var(--shadow)}
+  .path.on{border-color:var(--red);background:linear-gradient(155deg,#FFF6F3,#FFFFFF 65%);box-shadow:0 3px 14px rgba(218,41,28,.1)}
+  .path.on .pno{color:var(--red)}
+  .path.on h4{color:var(--red)}
+  .plan{
+    margin-top:18px;background:linear-gradient(155deg,#27251F,#3A362D 68%,#2E2B24);border-radius:18px;
+    padding:26px 28px 24px;color:#fff;position:relative;overflow:hidden;
+  }
+  .plan::before{content:"";position:absolute;right:-70px;top:-90px;width:240px;height:240px;border-radius:50%;background:var(--red);opacity:.2;filter:blur(34px)}
+  .plan::after{content:"";position:absolute;left:-40px;bottom:-120px;width:200px;height:200px;border-radius:50%;background:var(--yellow);opacity:.07;filter:blur(24px)}
+  .plan.empty{background:#F4ECDD;border:1px dashed #DCCDB2;color:var(--ink)}
+  .plan.empty::before,.plan.empty::after{display:none}
+  .plan-head{position:relative;z-index:1}
+  .plan .kick{font-family:"SF Mono",Consolas,monospace;font-size:10px;letter-spacing:.13em;color:var(--yellow);font-weight:800}
+  .plan.empty .kick{color:#A2967F}
+  .plan h3{font-size:clamp(18px,2.3vw,23px);font-weight:850;letter-spacing:-.02em;margin:8px 0 7px;line-height:1.28}
+  .plan.empty h3{color:var(--dark)}
+  .plan .pd{font-size:12.8px;color:#B5AC9E;line-height:1.72;max-width:660px}
+  .plan.empty .pd{color:var(--gray)}
+  .plan-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:20px;position:relative;z-index:1}
+  .pstep{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.11);border-radius:11px;padding:12px 13px}
+  .pstep .t{font-family:"SF Mono",Consolas,monospace;font-size:11px;font-weight:800;color:var(--yellow);letter-spacing:.02em}
+  .pstep .h{font-size:12.5px;font-weight:750;margin-top:5px;line-height:1.45}
+  .pstep .s{font-size:11px;color:#A29A8C;margin-top:4px;line-height:1.58}
+  .plan-foot{display:flex;align-items:center;gap:14px;margin-top:20px;flex-wrap:wrap;position:relative;z-index:1}
+  .plan .money{font-family:"SF Mono",Consolas,monospace;font-size:16px;font-weight:800;color:#fff;letter-spacing:-.01em}
+  .plan .money small{display:block;font-family:inherit;font-size:10.5px;font-weight:600;color:#9C9385;margin-top:2px;letter-spacing:0}
+  .plan .re-pick{font-size:11px;color:#8B8377}
+
+  /* ---------- CITY SWITCH / CMP ---------- */
+  .city-switch{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+  .cs-lbl{font-size:10.5px;font-weight:800;letter-spacing:.1em;color:var(--gray)}
+  .cs-name{font-size:14px;font-weight:800;color:var(--dark);letter-spacing:-.01em}
+  .cs-btn{
+    font:inherit;font-size:11.5px;font-weight:700;color:var(--gray);background:transparent;
+    border:1px solid var(--line);border-radius:99px;padding:5px 12px;cursor:pointer;transition:.16s;margin-left:auto;
+  }
+  .cs-btn:hover{background:var(--paper);color:var(--dark);border-color:#D6C6AC}
+  .route-note{margin-top:15px;padding-top:13px;border-top:1px dashed var(--line);font-size:12px;color:#8A6200;line-height:1.65}
+  .cmp-wrap{margin-top:22px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+  .cmp-head{font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--gray);margin-bottom:16px}
+  .cmp-row{display:grid;grid-template-columns:104px 1fr 118px;gap:12px;align-items:center;margin-bottom:9px}
+  .cmp-row:last-child{margin-bottom:0}
+  .cmp-nm{font-size:12.5px;font-weight:700;color:var(--dark);white-space:nowrap}
+  .cmp-nm span{display:block;font-size:10px;font-weight:500;color:var(--gray);font-family:"SF Mono",Consolas,monospace}
+  .cmp-track{height:9px;background:#F1E9DB;border-radius:99px;overflow:hidden}
+  .cmp-bar{height:100%;border-radius:99px;background:linear-gradient(90deg,#FFC72C,#DA291C);transition:width .7s cubic-bezier(.2,.8,.3,1)}
+  .cmp-bar.zero{background:#DCD3C3}
+  .cmp-v{font-family:"SF Mono",Consolas,monospace;font-size:10.5px;font-weight:700;color:var(--gray);text-align:right}
+  .cmp-v b{color:var(--dark);font-size:12.5px}
+
+  /* ---------- CLAIM ---------- */
+  .claim{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--shadow);margin-bottom:26px}
+  .claim-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:20px}
+  .claim h3{font-size:17px;font-weight:850;color:var(--dark);letter-spacing:-.01em}
+  .claim h3 span{color:var(--red)}
+  .claim-head p{font-size:12.5px;color:var(--gray);margin-top:5px;line-height:1.6}
+  .live-tag{font-family:"SF Mono",Consolas,monospace;font-size:10.5px;font-weight:800;background:#FFF0EC;color:var(--red);padding:5px 10px;border-radius:6px;letter-spacing:.05em;white-space:nowrap}
+  .claim-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:start}
+  .routes4{display:grid;gap:8px}
+  .r4{display:grid;grid-template-columns:24px 1fr;gap:11px;background:#FFFDF7;border:1px solid var(--line);border-radius:11px;padding:12px 14px;transition:.16s}
+  .r4:hover{border-color:#D6C6AC;background:#FFFCF4}
+  .r4 .n{width:22px;height:22px;border-radius:6px;background:var(--dark);color:var(--yellow);display:grid;place-items:center;font-family:"SF Mono",Consolas,monospace;font-size:10.5px;font-weight:800}
+  .r4 .tt{font-size:13px;font-weight:750;color:var(--dark)}
+  .r4 .dd{font-size:11.5px;color:var(--gray);margin-top:2px;line-height:1.55}
+  .r4 .path4{font-family:"SF Mono",Consolas,monospace;font-size:10.5px;color:#7A6C56;background:#F6F1E7;border-radius:5px;padding:2px 7px;display:inline-block;margin-top:6px}
+  .coupon-list{display:grid;gap:8px}
+  .cp{display:grid;grid-template-columns:66px 1fr auto;gap:12px;align-items:center;background:#FFFDF7;border:1px solid var(--line);border-radius:11px;padding:12px 14px}
+  .cp .amt{font-family:"SF Mono",Consolas,monospace;font-weight:800;color:var(--red);font-size:14px;letter-spacing:-.02em}
+  .cp .nm2{font-size:12.8px;font-weight:750;color:var(--dark)}
+  .cp .sub2{font-size:10.5px;color:var(--gray);margin-top:1px}
+  .cp .st{font-size:10px;font-weight:800;background:#EAF3EE;color:var(--green);padding:3px 7px;border-radius:5px;white-space:nowrap}
+  .warn-box{background:#FFFBF0;border:1px solid #F0E2C2;border-radius:11px;padding:13px 15px;font-size:11.8px;color:#6E5C36;line-height:1.75;margin-top:12px}
+  .warn-box b{color:#8A6200}
+  .dark-btn{
+    font:inherit;font-size:12px;font-weight:700;background:var(--dark);color:#fff;border:0;border-radius:9px;
+    padding:10px 16px;cursor:pointer;transition:.16s;margin-top:12px;
+  }
+  .dark-btn:hover{background:#3A362D;transform:translateY(-1px)}
+  .toast{
+    position:fixed;left:50%;bottom:34px;transform:translate(-50%,16px);background:var(--dark);color:#fff;
+    font-size:12.5px;font-weight:650;padding:11px 20px;border-radius:99px;opacity:0;pointer-events:none;
+    transition:.24s;z-index:99;box-shadow:0 8px 24px rgba(39,37,31,.28);
+  }
+  .toast.on{opacity:1;transform:translate(-50%,0)}
+
+  @media (max-width:860px){
+    .paths{grid-template-columns:1fr 1fr}
+    .plan-steps{grid-template-columns:1fr 1fr}
+    .claim-grid{grid-template-columns:1fr}
+    .step-row{grid-template-columns:1fr;gap:10px;padding:16px 0}
+    .step-label{padding-top:0}
+    .cmp-row{grid-template-columns:92px 1fr 100px}
+    .plan{padding:22px 20px}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .insights,.hacks,.calc-out,.principles{grid-template-columns:1fr}
+    .burger-lab{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr;gap:24px}
+    .checklist{grid-template-columns:1fr}
+    .store{grid-template-columns:44px 1fr;gap:12px}
+    .store .right{grid-column:2;text-align:left;display:flex;gap:12px;align-items:baseline}
+    .combo{grid-template-columns:1fr}
+    .plus{transform:rotate(90deg);padding:2px 0}
+    section{padding:56px 0}
+    nav .nav-links{gap:0}
+  }
+  @media (max-width:640px){
+    .nav-in{padding:0 13px;gap:9px;height:52px}
+    .brand{font-size:0;gap:0;flex:none}
+    .brand .dot{font-size:13px;width:24px;height:24px}
+    .nav-links{flex:1;gap:2px;justify-content:flex-end}
+    .nav-links a{padding:6px 8px;font-size:11.5px}
+    .nav-links a.on{padding:6px 10px}
+    .kicker{font-size:10.5px;letter-spacing:.1em;padding:5px 11px;line-height:1.6}
+    header.hero{padding:52px 0 42px}
+  }
+  @media (max-width:560px){
+    .paths{grid-template-columns:1fr}
+    .plan-steps{grid-template-columns:1fr}
+    .chips{gap:6px}
+    .chip{padding:8px 11px}
+    .chip .n{font-size:12.5px}
+    .plan-foot{gap:10px}
+    .cmp-row{grid-template-columns:84px 1fr 84px;gap:8px}
+    .cmp-nm{font-size:11.5px}
+    .claim{padding:20px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="brand"><span class="dot">M</span>周末不无聊计划</div>
+    <div class="nav-links">
+      <a href="#start">选一个</a>
+      <a href="#city" class="on">城市漫游</a>
+      <a href="#menu">菜单拆解</a>
+      <a href="#coupon">券与价格</a>
+      <a href="#source">数据来源</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-in">
+    <div class="kicker"><span class="live"></span>广州 / 北京 / 上海 / 成都 · 25 家门店 · 10-22 抓取</div>
+    <h1>周末不知道干嘛？<br>先跟着<em>麦麦</em>把这座城市走一遍。</h1>
+    <p class="lede">
+      一份给大学生的周末行动手册：4 座城市、25 家门店的真实分布，一个汉堡的 11 层解剖，96 种 14.9 元的随心配组合，
+      以及一张能把人均压到 22 元的券池表。全部数据来自麦当劳接口实时拉取，不是二手攻略。
+    </p>
+    <div class="stats">
+      <div class="stat"><b>25<span>家</span></b><small>4 城 5 片区实测门店</small></div>
+      <div class="stat"><b>96<span>种</span></b><small>随心配 1+1 组合数</small></div>
+      <div class="stat"><b>3<span>张</span></b><small>当前可领的券</small></div>
+      <div class="stat"><b>¥14.9<span>起</span></b><small>一堡一饮的地板价</small></div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= START ================= -->
+<section id="start">
+  <div class="wrap">
+    <div class="start-head">
+      <div class="start-kicker">START HERE</div>
+      <h2>先回答两件事，剩下的我替你排</h2>
+      <p>你在哪座城市、这个周末想干嘛。选完下面会直接长出一条具体的时间表，不是泛泛的「建议多出去走走」。</p>
+    </div>
+
+    <div class="step-row">
+      <div class="step-label"><b>01</b> 你现在在哪</div>
+      <div class="chips" id="cityChips">
+        <button class="chip on" data-city="gz_th"><span class="n">广州 · 天河</span><span class="s">5 家 · 4 家通宵</span></button>
+        <button class="chip" data-city="gz_ch"><span class="n">广州 · 从化</span><span class="s">5 家 · 1 家通宵</span></button>
+        <button class="chip" data-city="bj"><span class="n">北京 · 五道口</span><span class="s">5 家 · 0 家通宵</span></button>
+        <button class="chip" data-city="sh"><span class="n">上海 · 五角场</span><span class="s">5 家 · 0 家通宵</span></button>
+        <button class="chip" data-city="cd"><span class="n">成都 · 春熙路</span><span class="s">5 家 · 2 家通宵</span></button>
+      </div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-label"><b>02</b> 这个周末想干嘛</div>
+      <div class="paths" id="pathCards">
+        <button class="path" data-path="out">
+          <div class="pno">01</div>
+          <h4>想出门</h4>
+          <p>四个时间点，走完一片城区</p>
+        </button>
+        <button class="path" data-path="escape">
+          <div class="pno">02</div>
+          <h4>想逃离</h4>
+          <p>出城，或者算好末班车</p>
+        </button>
+        <button class="path" data-path="craft">
+          <div class="pno">03</div>
+          <h4>想折腾</h4>
+          <p>动手复刻一个巨无霸</p>
+        </button>
+        <button class="path" data-path="save">
+          <div class="pno">04</div>
+          <h4>想省钱</h4>
+          <p>券池拼单，人均压到 25</p>
+        </button>
+      </div>
+    </div>
+
+    <div class="plan empty" id="planBox"></div>
+  </div>
+</section>
+
+<!-- ================= 01 ================= -->
+<section id="city">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">01</div>
+      <div>
+        <h2>城市漫游：门店是城市人流的温度计</h2>
+        <p class="sec-sub">
+          同样叫麦当劳，天河店和从化店是两种生物，五道口店和春熙路店又是另外两种。
+          一个跟着地铁末班车营业到凌晨，一个跟着菜市场天黑关门，一个晚上十点整条街就散了。
+          把门店当坐标，城市就自己浮现出来了。
+        </p>
+      </div>
+    </div>
+
+    <div class="sec-body">
+      <div class="city-switch">
+        <span class="cs-lbl">当前城市</span>
+        <span class="cs-name" id="cityNow">广州 · 天河</span>
+        <button class="cs-btn" id="csBack">换一个城市 ↑</button>
+      </div>
+
+      <div class="stores" id="storeList"></div>
+      <div class="insights" id="cityInsights"></div>
+      <div class="route" id="cityRoute"></div>
+
+      <div class="cmp-wrap">
+        <div class="cmp-head">四城作息对比 · 通宵店占比与最晚闭店时间</div>
+        <div class="cmp" id="cityCmp"></div>
+      </div>
+
+      <div class="insight" style="margin-top:14px">
+        <div class="k">价格真的不一样：同款不同价</div>
+        <p style="margin-top:4px">
+          巨无霸 <b>天河 ¥25.5 / 从化 ¥26.5</b>；中薯条 <b>¥13.5 / ¥14</b>；麦乐鸡 <b>¥14 / ¥14.5</b>；心形薯饼 5 块 <b>¥14.5 / ¥15</b>。
+          但也有反向的：麦香鸡套餐 <b>¥28 / ¥27.5</b>、麦香鱼套餐 <b>¥33.5 / ¥33</b>。
+          说明门店有<b>独立的定价与促销权限</b>，所谓「全国统一价」并不成立 —— 跨店比价是有意义的。
+        </p>
+      </div>
+
+      <div style="margin-top:34px">
+        <div class="sec-head" style="margin-bottom:14px">
+          <div class="sec-num" style="background:#FFF6E0;color:#8A6200">NOW</div>
+          <div><h2 style="font-size:20px">这周正在发生的事</h2>
+          <p class="sec-sub">10 月 22 日至 11 月 3 日，官方活动日历里能直接参与的</p></div>
+        </div>
+        <div class="tl">
+          <div class="tl-row today">
+            <div class="tl-date">10 / 22 今天</div>
+            <div><div class="tl-title">「我就喜欢」限定丝巾开售</div><div class="tl-desc">一巾多玩，可当颈巾 / 包饰 / 头饰，叠搭棒球帽和徽章</div></div>
+            <div class="tl-price">+¥39.9</div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-date">10 / 22</div>
+            <div><div class="tl-title">韩式风味蘸酱上新</div><div class="tl-desc">辣椒黄油 / 烟熏芝士两款，鸡薯双全盒 15.9 起、蘸酱炸鸡 11.9 起</div></div>
+            <div class="tl-price">¥11.9 起</div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-date">10 / 15 起</div>
+            <div><div class="tl-title">联名徽章第二弹</div><div class="tl-desc">爱心 + 小雏菊 + 薯条，一套三枚</div></div>
+            <div class="tl-price">+¥39.9</div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-date">10 / 8 起</div>
+            <div><div class="tl-title">联名复古棒球帽 / 韩式风味系列</div><div class="tl-desc">龙焰鸡腿堡三件套 26.9，升级芝士棒版 29.9</div></div>
+            <div class="tl-price">¥26.9 起</div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-date">10 / 29</div>
+            <div><div class="tl-title">厚松饼堡回归</div><div class="tl-desc">枫糖 / 巧克力两种口味，早餐卡 6 折，3 件套 15 元起</div></div>
+            <div class="tl-price">¥15 起</div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-date">10 / 30</div>
+            <div><div class="tl-title">麦咖啡浓浓黑巧</div><div class="tl-desc">200 目精细研磨，秋冬限定</div></div>
+            <div class="tl-price">¥13.9</div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-date">11 / 3</div>
+            <div><div class="tl-title">蓝莓爆爆珠麦旋风</div><div class="tl-desc">真实蓝莓原浆 + 爆爆珠</div></div>
+            <div class="tl-price">¥16.5</div>
+          </div>
+        </div>
+        <div class="saving" style="margin-top:14px">
+          <b>¥49 / 150 天</b>
+          <span>学生专属麦金学期卡：0.33 元 / 天，四件套 5 折起、早餐 6 折、每日两次满额免配、9.9 元麦咖啡，还送多邻国月卡。对大学生来说这是整份攻略里唯一「闭眼买」的东西。</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 ================= -->
+<section id="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">02</div>
+      <div>
+        <h2>菜单拆解：一个汉堡的解剖课</h2>
+        <p class="sec-sub">
+          麦当劳的「特调」接口暴露了每个汉堡的真实配料表。拿巨无霸开刀，再算一遍自己复刻要多少钱、会怎么翻车。
+        </p>
+      </div>
+    </div>
+
+    <div class="sec-body">
+      <div class="burger-lab">
+        <div class="burger-vis">
+          <div class="stack" id="stack">
+            <div class="layer l-bun top"><span>芝麻面包顶</span></div>
+            <div class="layer l-sauce"><span>巨无霸酱</span></div>
+            <div class="layer l-lettuce"><span>生菜丝</span></div>
+            <div class="layer l-cheese"><span>吉士片</span></div>
+            <div class="layer l-patty"><span>100% 纯牛肉饼 ①</span></div>
+            <div class="layer l-bun mid"><span>中层面包</span></div>
+            <div class="layer l-sauce"><span>巨无霸酱</span></div>
+            <div class="layer l-pickle"><span>酸黄瓜片</span></div>
+            <div class="layer l-onion"><span>洋葱粒</span></div>
+            <div class="layer l-patty"><span>100% 纯牛肉饼 ②</span></div>
+            <div class="layer l-bun bot"><span>底层面包</span></div>
+          </div>
+          <div class="vis-note">鼠标悬停看每一层 · 配料名来自门店特调接口的真实选项</div>
+        </div>
+
+        <div>
+          <div class="price-line">
+            <span class="now">¥25.5</span>
+            <span class="off">无折扣 · 天河天源路店 1400359</span>
+          </div>
+          <div class="nutri">
+            <div><b>513</b><small>千卡 kcal</small></div>
+            <div><b>27 g</b><small>蛋白质</small></div>
+            <div><b>26 g</b><small>脂肪</small></div>
+            <div><b>42 g</b><small>碳水</small></div>
+            <div><b>961 mg</b><small>钠</small></div>
+            <div><b>171 mg</b><small>钙</small></div>
+          </div>
+          <p style="font-size:13px;color:var(--gray);line-height:1.75">
+            接口返回的可特调项只有五个：<b style="color:var(--ink)">巨无霸酱、吉士、生菜、酸黄瓜、洋葱粒</b>。
+            也就是说面包和牛肉饼是「不可动」的骨架，剩下五样是变量。
+            <b style="color:var(--ink)">去掉酱能省约 90 千卡</b>，去掉吉士省约 50 千卡 —— 想控卡就从这两个下手，别去动生菜。
+          </p>
+          <div class="fail" style="background:#FFF7F5;border-color:#F3D6CE">
+            <h6 style="color:var(--red)">一个反直觉的事实</h6>
+            <ul style="--x:0">
+              <li style="color:#7A5049">巨无霸的钠含量 961 mg，接近成人每日建议摄入量的一半。真正该减的是酱，不是盐罐。</li>
+              <li style="color:#7A5049">双层牛肉但只有一片吉士 —— 芝士是「增香」不是「增肉」。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe">
+        <div class="recipe-head">
+          <h4>复刻清单 · 巨无霸（约 ¥20 成本 / 个）</h4>
+          <div class="prog" id="prog">已备齐 <b>0</b> / 12</div>
+        </div>
+        <div class="checklist" id="checklist">
+          <label class="ci"><input type="checkbox"><span>牛肉馅 200 g<em>肥瘦 8:2，别用全瘦</em></span></label>
+          <label class="ci"><input type="checkbox"><span>芝麻汉堡胚 1 个<em>直径 10 cm 左右</em></span></label>
+          <label class="ci"><input type="checkbox"><span>美式芝士片 1 片<em>切达或再制芝士都行</em></span></label>
+          <label class="ci"><input type="checkbox"><span>生菜 1/4 颗<em>切细丝，越细越像</em></span></label>
+          <label class="ci"><input type="checkbox"><span>酸黄瓜 3 片<em>斜切，别用整根</em></span></label>
+          <label class="ci"><input type="checkbox"><span>洋葱 1/4 个<em>切细粒，不是丝</em></span></label>
+          <label class="ci"><input type="checkbox"><span>蛋黄酱 3 勺<em>巨无霸酱的基底</em></span></label>
+          <label class="ci"><input type="checkbox"><span>番茄酱 1 勺 + 黄芥末 1 小勺</span></label>
+          <label class="ci"><input type="checkbox"><span>酸黄瓜碎 + 白醋 1/2 小勺<em>酱的酸味来源</em></span></label>
+          <label class="ci"><input type="checkbox"><span>洋葱粉 / 蒜粉 / 糖 各少许</span></label>
+          <label class="ci"><input type="checkbox"><span>平底锅 + 压饼工具<em>锅铲背面或小锅底</em></span></label>
+          <label class="ci"><input type="checkbox"><span>烤箱或空气炸锅<em>160 ℃ 烘胚 3 分钟</em></span></label>
+        </div>
+        <div class="fail">
+          <h6>四个必翻车点</h6>
+          <ul>
+            <li><b>肉饼做太厚</b> —— 麦当劳每片约 45 g，薄到透光。厚饼煎完会缩成球，咬下去是肉丸不是汉堡。</li>
+            <li><b>酱太酸</b> —— 酸黄瓜碎一定要挤干水分，否则酱会稀成汤。</li>
+            <li><b>生菜出水</b> —— 洗完必须甩干或用厨房纸吸，不然面包 5 分钟就烂。</li>
+            <li><b>芝士不化</b> —— 出锅前 20 秒把芝士盖在肉饼上、盖上锅盖，靠蒸汽融，别直接干烧。</li>
+          </ul>
+        </div>
+        <div style="margin-top:16px;padding:14px 16px;background:#F7F3EA;border-radius:11px;font-size:12.5px;color:#6E6555;line-height:1.7">
+          <b style="color:var(--ink)">成本核算：</b>牛肉 200 g 约 ¥12、汉堡胚 ¥3、芝士 ¥2、配菜与酱约 ¥3 —— 合计 <b style="color:var(--red)">约 ¥20 / 个</b>，对比门店 ¥25.5。
+          省下的 5 块钱买不到时间，但买得到「厚度自由」和一次厨房事故。<b>建议当周末项目做，不要当省钱手段。</b>
+        </div>
+      </div>
+
+      <div class="recipe" style="margin-top:16px">
+        <div class="recipe-head">
+          <h4>再拆一个新品 · 龙焰鸡腿堡（韩式辣酱 × 青梅黄油）</h4>
+          <div class="prog" style="color:var(--red)">¥15.9 <span style="color:#B4ABA0;text-decoration:line-through">¥24</span></div>
+        </div>
+        <p style="font-size:13px;color:var(--gray);line-height:1.75;margin-bottom:14px">
+          接口里它的可特调项只有两个：<b style="color:var(--ink)">辣椒黄油风味酱</b> 和 <b style="color:var(--ink)">切块生菜</b>。
+          结构极简 —— 胚 + 脆鸡腿排 + 辣酱 + 生菜块。所以复刻的胜负手全在那勺酱上。
+        </p>
+        <div class="checklist" style="grid-template-columns:1fr 1fr">
+          <label class="ci"><input type="checkbox"><span>韩式辣酱 2 勺<em>Gochujang，超市进口区有</em></span></label>
+          <label class="ci"><input type="checkbox"><span>黄油 10 g<em>酱的灵魂，别省</em></span></label>
+          <label class="ci"><input type="checkbox"><span>青梅汁 / 话梅糖浆 1 勺<em>提供那点果酸</em></span></label>
+          <label class="ci"><input type="checkbox"><span>蜂蜜 1 小勺 + 蒜末少许</span></label>
+          <label class="ci"><input type="checkbox"><span>去骨鸡腿 1 块<em>盐 / 黑胡椒 / 料酒腌 20 分钟</em></span></label>
+          <label class="ci"><input type="checkbox"><span>裹粉：面粉 + 玉米淀粉 1:1<em>加一小撮泡打粉更脆</em></span></label>
+        </div>
+        <div class="fail good" style="background:#EFF7F1;border-color:#D5E8DB">
+          <h6 style="color:var(--green)">做法顺序</h6>
+          <ul>
+            <li style="color:#3F6B52">小火化黄油 → 下蒜末炒香 → 加辣酱、青梅汁、蜂蜜，搅到能挂勺，关火备用。</li>
+            <li style="color:#3F6B52">鸡腿裹粉后静置 3 分钟回潮，170 ℃ 炸 4 分钟，捞出升高油温复炸 30 秒。</li>
+            <li style="color:#3F6B52">胚烤热 → 抹酱 → 放鸡排 → 再抹一层酱 → 撒切块生菜。生菜要在最后，否则会被酱泡软。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="gen">
+        <div class="gen-head">
+          <div>
+            <h4>96 种搭配实验：随心配 1+1</h4>
+            <p>蓝区 8 个主食 / 小食 × 粉区 12 个饮品 / 甜品 = 96 种，固定 ¥14.9</p>
+          </div>
+          <div class="price">¥14.9 / 组</div>
+        </div>
+        <div class="combo">
+          <div class="slot"><div class="zone">蓝区 · 主食 / 小食</div><div class="nm" id="blueName">双层吉士汉堡</div><div class="df" id="blueDiff">基准价 +¥0</div></div>
+          <div class="plus">+</div>
+          <div class="slot"><div class="zone">粉区 · 饮品 / 甜品</div><div class="nm" id="pinkName">可乐麦炫酷</div><div class="df" id="pinkDiff">基准价 +¥0</div></div>
+        </div>
+        <div class="gen-actions">
+          <button class="btn primary" id="rollBtn">摇一个组合</button>
+          <button class="btn ghost" id="cheapBtn">只要最省（含 -¥1 选项）</button>
+          <button class="btn ghost" id="resetBtn">回到默认</button>
+        </div>
+        <div class="pool-stat" id="rollStat">已尝试 0 次 · 实际支付始终 ¥14.9，差价会实时反映在总价上</div>
+      </div>
+
+      <div class="hacks">
+        <div class="hack">
+          <div class="no">HACK 01</div>
+          <h5>薯条蘸麦旋风</h5>
+          <p>咸脆的薯条插进冰淇淋，冷热和咸甜在嘴里打架。麦当劳员工私下最常见的吃法，也是最快让人沉默的一种。</p>
+          <div class="cost">中薯条 ¥13.5 + 经典麦旋风 ¥15.5 = ¥29</div>
+        </div>
+        <div class="hack">
+          <div class="no">HACK 02</div>
+          <h5>派夹圆筒</h5>
+          <p>香芋派或菠萝派掰开，把圆筒的冰淇淋塞进去，压扁。外皮还是热的，冰淇淋化成酱，8 块钱吃出 28 块的仪式感。</p>
+          <div class="cost">派 ¥8.5 + 圆筒 ¥5 = ¥13.5</div>
+        </div>
+        <div class="hack">
+          <div class="no">HACK 03</div>
+          <h5>3 元酱汁改造一切</h5>
+          <p>韩式烟熏芝士风味酱单卖只要 ¥3。蘸薯条、蘸鸡块、抹在麦香鱼上，等于给整单换了个风味系统。</p>
+          <div class="cost">烟熏芝士酱 ¥3 / 份</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 ================= -->
+<section id="coupon">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">03</div>
+      <div>
+        <h2>券与价格：一顿饭的经济学</h2>
+        <p class="sec-sub">
+          菜单上每一个数字都不是随便定的。看懂它，你就知道什么时候该单点、什么时候该拼单、什么时候该走人。
+        </p>
+      </div>
+    </div>
+
+    <div class="sec-body">
+      <div class="claim">
+        <div class="claim-head">
+          <div>
+            <h3>领券的地方，<span>现在就能点进去</span></h3>
+            <p>不用找链接、不用加群。四个入口全是麦当劳官方渠道，登录会员就能领，领完当场可用。</p>
+          </div>
+          <div class="live-tag">当前可领 3 张</div>
+        </div>
+        <div class="claim-grid">
+          <div class="routes4">
+            <div class="r4">
+              <div class="n">1</div>
+              <div>
+                <div class="tt">麦当劳官方 App</div>
+                <div class="dd">应用商店搜「麦当劳」下载，登录会员后进首页「麦麦省」，一键领取。周一更新的券最多，一次能领 7 张。</div>
+                <span class="path4">App 首页 → 麦麦省 → 一键领取</span>
+              </div>
+            </div>
+            <div class="r4">
+              <div class="n">2</div>
+              <div>
+                <div class="tt">微信小程序「i麦当劳」</div>
+                <div class="dd">微信搜索「i麦当劳」直接进小程序，首页同样是「麦麦省」。不想装 App 就走这条。</div>
+                <span class="path4">微信 → 搜 i麦当劳 → 麦麦省</span>
+              </div>
+            </div>
+            <div class="r4">
+              <div class="n">3</div>
+              <div>
+                <div class="tt">支付宝生活号</div>
+                <div class="dd">支付宝搜「麦当劳」，进生活号首页的领券 banner，会员登录后即可领取。</div>
+                <span class="path4">支付宝 → 搜 麦当劳 → 领券 banner</span>
+              </div>
+            </div>
+            <div class="r4">
+              <div class="n">4</div>
+              <div>
+                <div class="tt">到店扫码点餐页</div>
+                <div class="dd">坐下扫桌上的点餐码，页面底部就有「领券」入口，领完直接在当前这一单里勾上用掉。</div>
+                <span class="path4">扫码点餐 → 页面底部 → 领券</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="coupon-list">
+              <div class="cp">
+                <div class="amt">11.9 元</div>
+                <div><div class="nm2">麦辣鸡腿堡</div><div class="sub2">单点约 ¥22.5，一张省 ¥10.6</div></div>
+                <div class="st">可领取</div>
+              </div>
+              <div class="cp">
+                <div class="amt">19.9 元</div>
+                <div><div class="nm2">王牌炸鸡任选 2</div><div class="sub2">两份炸鸡，两人份刚好</div></div>
+                <div class="st">可领取</div>
+              </div>
+              <div class="cp">
+                <div class="amt">免费</div>
+                <div><div class="nm2">脆薯饼</div><div class="sub2">0 元，凑单填位用</div></div>
+                <div class="st">可领取</div>
+              </div>
+            </div>
+            <div class="warn-box">
+              <b>领完别急着走。</b>券有门店和场景围栏 —— 同一张券在 A 店能用、B 店可能用不了；到店自取能用、麦乐送未必能用。
+              进店前先在卡包里点开「可用门店」，或者看下单页有没有自动勾上。
+              有效期、可用时段以领券页和卡包为准，本页只记录 <span class="mono">2026-10-22 18:07</span> 抓取时的状态。
+            </div>
+            <button class="dark-btn" id="copyClaim">复制这四步，发给自己</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="principles">
+        <div class="pr">
+          <div class="n">PRINCIPLE 01</div>
+          <h5>锚定：划线价从来不是给人付的</h5>
+          <p>龙焰鸡腿堡标价 <b>¥24</b>，实付 <b>¥15.9</b>。24 这个数字的唯一作用是让你觉得 15.9 便宜了 34%。</p>
+          <div class="ev">实测：单点 3 件原价 <code>¥47.0</code>，实付 <code>¥38.9</code>，系统自己给你减了 <code>¥8.1</code></div>
+        </div>
+        <div class="pr">
+          <div class="n">PRINCIPLE 02</div>
+          <h5>捆绑：套餐永远比单点便宜，但你多买了</h5>
+          <p>龙焰堡 + 中薯 + 可乐单点 <b>¥38.9</b>；「龙焰鸡腿堡三件套」<b>¥26.9</b>。便宜 12 块，代价是你必须接受它指定的薯条和可乐。</p>
+          <div class="ev">这是典型的 bundle pricing：用高毛利小食和饮品补贴主餐，同时锁死你的选择</div>
+        </div>
+        <div class="pr">
+          <div class="n">PRINCIPLE 03</div>
+          <h5>二部定价：先收门票，再收饭钱</h5>
+          <p>学生麦金学期卡 <b>¥49 / 150 天</b>，等于 0.33 元一天。付完这笔钱，你之后每一次「要不要吃麦麦」的犹豫都会被沉没成本推着走。</p>
+          <div class="ev">150 天 × 哪怕两天吃一次 = 75 次消费机会，¥49 是入场费，不是折扣</div>
+        </div>
+        <div class="pr">
+          <div class="n">PRINCIPLE 04</div>
+          <h5>价格歧视：用身份把人群切开</h5>
+          <p>同一份四件套，有卡的人 ¥28，没卡的人 ¥57。学生卡只对学生开放 —— 支付意愿低的人被低价锁定，原价客群毫发无伤。</p>
+          <div class="ev">「人气超值四件套随心选」<code>¥28</code>，划线价 <code>¥57</code>，必须随单购麦金卡才生效</div>
+        </div>
+        <div class="pr">
+          <div class="n">PRINCIPLE 05</div>
+          <h5>稀缺与损失厌恶：限时比打折更有效</h5>
+          <p>联名周边只卖两周、心形薯饼 8 块限时 ¥9.9（原价 ¥22.5）。打折让你算划不划算，限时让你怕错过 —— 后者不需要计算。</p>
+          <div class="ev">心形薯饼 8 块：<code>¥22.5 → ¥9.9</code>，折扣 56%，标注「限时特惠」</div>
+        </div>
+        <div class="pr">
+          <div class="n">PRINCIPLE 06</div>
+          <h5>券的围栏：为什么你的券用不了</h5>
+          <p>券不是通用货币。查可用券必须同时给出门店编码、订单类型（到店 / 外送）、取餐方式 —— 三道围栏，把同一张券限制在特定场景。</p>
+          <div class="ev">实测：可领 3 张券，但 <code>query-store-coupons</code> 在天源路店返回空 —— 卡包里没有可用资产</div>
+        </div>
+      </div>
+
+      <div class="calc">
+        <div class="calc-top">
+          <div class="field">
+            <label>一起吃饭的人数</label>
+            <div class="seg" id="peopleSeg">
+              <button data-n="2">2 人</button>
+              <button data-n="3" class="on">3 人</button>
+              <button data-n="4">4 人</button>
+              <button data-n="6">6 人</button>
+            </div>
+          </div>
+          <div class="field">
+            <label>可领的券（麦麦省当前 3 张）</label>
+            <div style="display:flex;gap:7px;flex-wrap:wrap">
+              <span class="pill">11.9 麦辣鸡腿堡</span>
+              <span class="pill">19.9 王牌炸鸡任选 2</span>
+              <span class="pill">免费脆薯饼</span>
+            </div>
+          </div>
+        </div>
+        <div class="calc-out" id="calcOut"></div>
+        <div class="saving" id="savingBar"></div>
+        <div style="display:flex;justify-content:flex-end">
+          <button class="dark-btn" id="copyPool">复制这张券池表，发到群里</button>
+        </div>
+        <div style="margin-top:14px;font-size:11.5px;color:#9A9287;line-height:1.7">
+          券池逻辑：券按「张」发放，每张锁死一个 SKU 的低价。人数越多，能叠加的低价 SKU 越多 —— 所以人多时不要各点各的，
+          <b>把券集中到一单</b>，用最低价商品填满所有人的需求。以上按「每人 1 张堡券 + 每 2 人 1 份炸鸡任选 2 + 每人 1 张免费薯饼」估算，
+          实际以卡包与门店可用券为准。
+        </div>
+      </div>
+
+      <div style="margin-top:36px">
+        <div class="sec-head" style="margin-bottom:14px">
+          <div class="sec-num" style="background:#FFF6E0;color:#8A6200">PICK</div>
+          <div><h2 style="font-size:20px">人均 20–30 元的六个方案</h2>
+          <p class="sec-sub">按「省钱 / 尝新 / 吃饱 / 券党 / 咖啡因 / 甜品」六种周末人格分类，价格取自天河天源路店实时菜单</p></div>
+        </div>
+        <table class="btable">
+          <thead>
+            <tr><th>方案</th><th>组合</th><th>热量</th><th>实付</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="nm">极简党<span>最便宜的完整一餐</span></td>
+              <td>随心配 1+1（双层吉士汉堡 + 可乐麦炫酷）+ 圆筒冰淇淋</td>
+              <td class="kcal">669 kcal</td>
+              <td class="p">¥19.9</td>
+            </tr>
+            <tr>
+              <td class="nm">尝新党<span>限时新品，过期不候</span></td>
+              <td>龙焰鸡腿堡（¥15.9 特价）+ 心形薯饼 8 块（限时 ¥9.9）</td>
+              <td class="kcal">约 690 kcal</td>
+              <td class="p">¥25.8</td>
+            </tr>
+            <tr>
+              <td class="nm">吃饱党<span>折扣最大的一档</span></td>
+              <td>大堡口福三件套（原价 ¥47，省 ¥24.1）</td>
+              <td class="kcal">约 800 kcal</td>
+              <td class="p">¥22.9</td>
+            </tr>
+            <tr>
+              <td class="nm">券党<span>先领券再进门</span></td>
+              <td>11.9 麦辣鸡腿堡券 + 中薯条</td>
+              <td class="kcal">774 kcal</td>
+              <td class="p">¥25.4</td>
+            </tr>
+            <tr>
+              <td class="nm">咖啡因党<span>下午三点续命</span></td>
+              <td>麦咖啡浓浓黑巧 ¥13.9 + 麦香鸡 ¥17</td>
+              <td class="kcal">545 kcal</td>
+              <td class="p">¥30.9</td>
+            </tr>
+            <tr>
+              <td class="nm">甜品党<span>不吃饭，只吃冰</span></td>
+              <td>蓝莓爆爆珠麦旋风 ¥16.5 + 香芋派 ¥8.5</td>
+              <td class="kcal">527 kcal</td>
+              <td class="p">¥25.0</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="saving" style="background:#FFF7F4;border-color:#F3D6CE;color:#8A3B2E;margin-top:6px">
+          <b>一句话结论</b>
+          <span style="color:#9A6A5E">预算 20–30 元时，<b>「大堡口福三件套 ¥22.9」</b>和<b>「随心配 + 圆筒 ¥19.9」</b>是唯二不需要动脑的最优解。想玩就去券池，想省就直接点套餐。</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="source">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h6>数据来源</h6>
+        <p>
+          本页所有门店、菜单、价格、券、活动数据，均通过麦当劳 MCP 接口实时拉取：
+          门店 <code>query-nearby-stores</code>（到店自取 beType=1，广州市天河 / 从化、北京市五道口、上海市五角场、成都市春熙路，共 25 家，2026-10-22 18:07）、
+          菜单 <code>query-meals</code>（1400359 天河天源路、1400692 从化远达广场）、
+          配料结构 <code>query-meal-detail</code>（巨无霸 1100、龙焰鸡腿堡 521952、随心配 9900013304）、
+          实测算价 <code>calculate-price</code>、券 <code>available-coupons</code> / <code>query-my-coupons</code> / <code>query-store-coupons</code>、
+          营养 <code>list-nutrition-foods</code>、活动 <code>campaign-calendar</code>。
+        </p>
+        <p class="foot-note">
+          门店编码 —— 天河：1400359 / 1400211 / 1400977 / 1400714 / 1400257；从化：1400692 / 1400328 / 1401052 / 1400825 / 1400058；
+          北京：1950556 / 1950091 / 1950921 / 1950757 / 1950708；上海：1450094 / 1450207 / 1450325 / 1450668 / 1450361；
+          成都：3450410 / 3450339 / 3450069003 / 3450069 / 3450043。
+          价格为抓取时刻的到店自取价，不同门店、不同时段可能不同；券以本人卡包实际可用为准。
+        </p>
+      </div>
+      <div>
+        <h6>怎么用这份东西</h6>
+        <p>
+          最省事的用法是回到页面开头：选城市，再选一个方向，直接照那条时间表走。
+          <br>· 想出门 → 四个时间点走完一片城区
+          <br>· 想逃离 → 出城，或者把最后两小时算清楚
+          <br>· 想折腾 → 复刻清单打勾，做一次巨无霸
+          <br>· 想省钱 → 券池表复制走，发给一起吃饭的人
+        </p>
+        <p class="foot-note">
+          页面不联网、不调用接口，所有数字都是快照。真要点单、真要领券，还是回麦当劳 App 或「i麦当劳」小程序。
+        </p>
+      </div>
+    </div>
+    <div class="sig">
+      <span>周末不无聊计划 · 广州站 · 为不会安排周末的大学生而做</span>
+      <span class="mono">2026.10.22 / 12:04</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 1. 城市数据 ---------- */
+  var CITIES = {
+    gz_th:{
+      name:'广州 · 天河',
+      sub:'五家店挤在华南植物园、五山高校带和广州东站之间。这里是广州最密集的「学生 + 科研 + 老社区」混合体，也是四座城市里唯一敢整夜不关灯的一片。',
+      stores:[
+        {n:'麦当劳广州天源路餐厅', a:'天源路 5 号', tags:[['24 小时','time'],['华南植物园口','hot'],['华工 / 华农辐射区','']], d:'134 m', c:'1400359', end:'24:00'},
+        {n:'麦当劳广州长兴路餐厅', a:'长兴路 13 号', tags:[['24 小时','time'],['长湴夜宵带','hot'],['地铁 6 号线','']], d:'562 m', c:'1400211', end:'24:00'},
+        {n:'麦当劳广州南方医科大餐厅', a:'沙太南路 1023 号 南方医科大学二食堂二层', tags:[['07:00–23:00',''],['纯校园店','hot'],['食堂二楼','']], d:'1.7 km', c:'1400977', end:'23:00'},
+        {n:'麦当劳广州广垦天河 1 号餐厅', a:'怡新路 163 号 广垦天河 1 号购物广场一层', tags:[['24 小时','time'],['商业综合体',''],['有座位区','']], d:'1.8 km', c:'1400714', end:'24:00'},
+        {n:'麦当劳广州燕岭路餐厅', a:'燕岭路 91 号 新燕大厦首层', tags:[['24 小时','time'],['广州东站枢纽','hot'],['赶车首选','']], d:'1.8 km', c:'1400257', end:'24:00'}
+      ],
+      insights:[
+        {k:'24 小时店占比', big:'4 / 5', p:'五家里四家通宵。天河的夜晚有<b>地铁末班车、加班楼和夜宵摊</b>撑着，麦麦才敢不关灯。'},
+        {k:'商圈文化圈', p:'天源路店卡在<b>华南植物园</b>与<b>五山高校带</b>之间；往南是华工、华农，往北是龙洞。这一带是广州最密集的「学生 + 科研 + 老社区」混合体。'},
+        {k:'这家店独有', p:'联名徽章 ¥34.9、按摩捶 ¥14.9、多汁柠柠 ¥12、蘸酱脆皮鸡块 8 块 ¥19.9 —— 这些 SKU <b>在从化查不到</b>。'}
+      ],
+      route:{t:'天河高校带 · 一天走完', steps:[
+        ['09:00','华南植物园','学生半价，园子大到能走三小时。温室群是拍照主力。'],
+        ['12:30','天源路店 · 1400359','出园步行即到。点随心配 14.9，坐窗边看天源路车流。'],
+        ['14:00','五山 · 华农酸奶 + 旧书店','华农酸奶是本地学生的固定仪式，书店能翻一下午。'],
+        ['18:30','燕岭路店 · 1400257','靠广州东站，看绿皮车和高铁进出站，收尾一杯 13.9 的浓浓黑巧。']
+      ]},
+      note:''
+    },
+    gz_ch:{
+      name:'广州 · 从化',
+      sub:'同一座城市的另一面：5 家里只有 1 家通宵，河滨广场店 22:59 就打烊。门店跟着菜市场天黑关门，客群不是白领，是带孩子来的家庭。',
+      stores:[
+        {n:'麦当劳广州从化远达广场餐厅', a:'从城大道 93 号、95 号、107 号 203 铺', tags:[['07:00–23:00',''],['从化城区中心','hot'],['二楼铺位','']], d:'168 m', c:'1400692', end:'23:00'},
+        {n:'麦当劳从化从城大道餐厅', a:'江埔街海塱东路 7 号 欣荣宏国际商贸城 1-1 层', tags:[['24 小时','time'],['从化唯一通宵店','hot'],['商贸城','']], d:'489 m', c:'1400328', end:'24:00'},
+        {n:'麦当劳广州从化河滨广场餐厅', a:'街口街城南三巷 10 号 119 / 120 / 121 号商铺', tags:[['07:00–22:59',''],['老城街口','hot'],['流溪河边','']], d:'1.1 km', c:'1401052', end:'22:59'},
+        {n:'麦当劳广州从化环市东路领创荟餐厅', a:'江埔街环市东路 255 号 201 房', tags:[['07:00–23:00',''],['新城区',''],['近客运站','']], d:'1.2 km', c:'1400825', end:'23:00'},
+        {n:'麦当劳从化新世纪广场餐厅', a:'街口镇新世纪广场首层', tags:[['当前暂停营业','off'],['不支持预约','off']], d:'1.9 km', c:'1400058', closed:true}
+      ],
+      insights:[
+        {k:'24 小时店占比', big:'1 / 5', p:'只有商贸城那家通宵。晚上 11 点后从化基本进入<b>「麦麦已打烊」</b>状态，夜生活半径直接砍半。'},
+        {k:'农村 / 郊区麦麦的不同', p:'城区店是「取餐就走」的过道，从化店是<b>购物中心二楼的坐下来的地方</b>：有窗、有停车位、有带小孩的家庭，客群不是白领是家庭。'},
+        {k:'这家店独有', p:'韩式甜辣酱鸡块 8 块 ¥19.9、蘸酱韩式甜辣酱鸡块 ¥11.9、联名棒球帽 ¥34.9 —— <b>天河反而没有</b>。供货是分级的。'}
+      ],
+      route:{t:'从化山水带 · 一天走完', steps:[
+        ['08:00','远达广场店 · 1400692','七点就开门。早餐三件套 15 元起，厚松饼堡刚回归。'],
+        ['10:00','流溪河绿道骑行','沿河一路向北，秋天水面起雾，人少到能听见车轮声。'],
+        ['13:00','从城大道店 · 1400328','唯一 24h 店，商贸城里吃饭顺便逛超市，补给最方便。'],
+        ['16:00','街口老城 · 河滨广场店 1401052','老骑楼、菜市场、糖水铺。这家 22:59 关门，别拖太晚。']
+      ]},
+      note:'回城提醒：从化回广州的末班车集中在 21:00–23:00。河滨广场店 22:59 打烊，别等最后一家关门才动身。'
+    },
+    bj:{
+      name:'北京 · 五道口',
+      sub:'中关村东侧的学生区，5 家店没有一家通宵，四家 22:00 关门。白天被写字楼和高校填满，晚上 10 点整条街就散了 —— 这是四座城市里最早熄灯的一片。',
+      stores:[
+        {n:'麦当劳北京五道口优盛餐厅', a:'城府路 28 号 五道口购物中心 F1', tags:[['07:00–23:00',''],['全街最晚','hot'],['可预约 · 有宵夜时段','']], d:'204 m', c:'1950556', end:'23:00'},
+        {n:'麦当劳北京华清餐厅', a:'五道口东升园华清嘉园', tags:[['07:00–22:00',''],['社区店',''],['华清嘉园','']], d:'350 m', c:'1950091', end:'22:00'},
+        {n:'麦当劳北京双清路餐厅', a:'中关村东路 8 号 东升大厦 C 座平房 SA01 单元', tags:[['07:00–22:00',''],['写字楼区','']], d:'463 m', c:'1950921', end:'22:00'},
+        {n:'麦当劳北京语言大学餐厅', a:'学院路 15 号 二区 28 号 108 号', tags:[['07:00–22:00',''],['纯校园店','hot'],['可预约','']], d:'685 m', c:'1950757', end:'22:00'},
+        {n:'麦当劳北京保福寺桥餐厅', a:'中关村东路 世纪科贸大厦 B 座', tags:[['07:00–22:00',''],['可预约 · 夜市时段',''],['近中关村','']], d:'978 m', c:'1950708', end:'22:00'}
+      ],
+      insights:[
+        {k:'24 小时店占比', big:'0 / 5', p:'五道口没有一家通宵。四家 22:00 关门，最晚的优盛店也只到 23:00 —— 四座城市里<b>最早熄灯</b>的一片。'},
+        {k:'商圈文化圈', p:'五道口购物中心 + 华清嘉园 + 学院路高校带（北语、北航、中科院）。中关村东路的写字楼填满白天，<b>晚上 10 点整条街就散了</b>。'},
+        {k:'一个细节', p:'优盛店是唯一提供「宵夜」预约时段的店（22:14–22:46）。说明真有那么一批人，22 点后还留在这条街上。'}
+      ],
+      route:{t:'五道口 · 一条街走完', steps:[
+        ['10:00','五道口购物中心','F1 就是优盛店。先逛，饿了直接下楼，不用出楼。'],
+        ['12:30','优盛店 · 1950556','全街唯一有「宵夜」预约时段的店，窗边看城府路。'],
+        ['15:00','学院路（北语 → 中关村东路）','校园和书店最密的一段，一路走到东升大厦一带。'],
+        ['19:00','保福寺桥店 · 1950708','夜市时段 17:14–21:45，可预约。21:45 前必须到。']
+      ]},
+      note:'熄灯提醒：五道口 5 家店最晚 23:00，其中四家 22:00 就关门。夜宵别指望这条街。'
+    },
+    sh:{
+      name:'上海 · 五角场',
+      sub:'没有通宵店，但营业区间是四城里最宽的：国定路三号湾 6 点开门，东方蓝海国际撑到 23:59。同一条街上，早餐党和宵夜党各有各的店，中间不空档。',
+      stores:[
+        {n:'麦当劳上海五角场万达餐厅', a:'淞沪路 77 号 B1 A-05', tags:[['10:00–22:00',''],['万达 B1','hot'],['可预约','']], d:'286 m', c:'1450094', end:'22:00'},
+        {n:'麦当劳上海国定路三号湾餐厅', a:'国定路 319', tags:[['06:00–22:00','time'],['全城最早开门','hot']], d:'562 m', c:'1450207', end:'22:00'},
+        {n:'麦当劳上海杨浦创智天地下壹站餐厅', a:'淞沪路 303 号 地下一层 05、06、07、08 室', tags:[['07:00–23:00',''],['有宵夜时段','hot'],['可预约','']], d:'767 m', c:'1450325', end:'23:00'},
+        {n:'麦当劳上海杨浦国权路地铁站餐厅', a:'四平路 1810 号', tags:[['07:00–23:00',''],['地铁站口',''],['有宵夜时段','']], d:'1009 m', c:'1450668', end:'23:00'},
+        {n:'麦当劳上海杨浦东方蓝海国际餐厅', a:'国权东路 198 号', tags:[['06:30–23:59','time'],['全城最晚','hot']], d:'1116 m', c:'1450361', end:'23:59'}
+      ],
+      insights:[
+        {k:'营业跨度', big:'06:00→23:59', p:'国定路三号湾 6 点开门，东方蓝海到 23:59。<b>同一条街上，早餐党和宵夜党各有各的店</b>，中间不空档。'},
+        {k:'商圈文化圈', p:'五角场万达 + 创智天地 + 复旦 / 同济高校带。国权路地铁站那家直接开在出口，是换乘人流的漏斗。'},
+        {k:'一个细节', p:'两家店（创智天地下壹站 1450325、国权路地铁站 1450668）有 22:14–22:46 的宵夜时段，是五角场 22 点后<b>唯一还能坐下</b>的地方。'}
+      ],
+      route:{t:'五角场 · 从早六点到午夜', steps:[
+        ['07:00','国定路三号湾 · 1450207','6 点开门，全城最早。早餐三件套，赶早课的人都在这里。'],
+        ['10:00','复旦邯郸校区 + 创智天地','校园和园区连着走，中间没有围墙感。'],
+        ['13:00','五角场万达店 · 1450094','淞沪路 B1，吃完直接逛商场，下雨天也不用出门。'],
+        ['21:00','创智天地下壹站 · 1450325','宵夜时段 22:14 才开始，等到点再下单，别提前。']
+      ]},
+      note:'最晚的一家是东方蓝海国际（1450361），23:59 关门 —— 全城唯一能坐到午夜的店。'
+    },
+    cd:{
+      name:'成都 · 春熙路',
+      sub:'5 家店全挤在 350 米内，最远走 4 分钟，其中两家是 00:00–23:59 的真通宵。春熙路是四座城市里唯一「越晚越热闹」的那一个。',
+      stores:[
+        {n:'麦当劳成都锦江区联升巷（京都大厦）餐厅', a:'大科甲巷 43 号 1 栋 1 楼 1 号（L10）及 2 楼 1 号（L210）', tags:[['07:00–23:59',''],['大科甲巷','hot']], d:'173 m', c:'3450410', end:'23:59'},
+        {n:'麦当劳成都锦江总府路茂业百货餐厅', a:'总府路 1 号 茂业百货二层 9F02001X 商铺', tags:[['00:00–23:59','time'],['真 24 小时','hot']], d:'288 m', c:'3450339', end:'24:00'},
+        {n:'成都锦江区春熙路地铁站快捷小站', a:'春熙路地铁站 D1 号商铺', tags:[['07:30–23:30',''],['地铁站内','hot'],['取餐即走','']], d:'293 m', c:'3450069003', end:'23:30'},
+        {n:'麦当劳成都第一城餐厅', a:'小科甲巷 1 号 二层 30、31 号商铺（IFS 对面）', tags:[['07:00–23:59',''],['IFS 对面','hot']], d:'299 m', c:'3450069', end:'23:59'},
+        {n:'麦当劳成都壹购广场餐厅', a:'东大街上东大街段 133 号 壹购潮流广场', tags:[['00:00–23:59','time'],['真 24 小时','hot']], d:'344 m', c:'3450043', end:'24:00'}
+      ],
+      insights:[
+        {k:'门店密度', big:'350 m', p:'五家店全挤在 350 米内，走过去最远 4 分钟。天河同样五家却横跨 1.8 公里 —— 春熙路是<b>「一条街五家店」</b>，天河是「一个区五家店」。'},
+        {k:'24 小时店占比', big:'2 / 5', p:'茂业百货和壹购广场都是 00:00–23:59 的真通宵。春熙路是四座城市里<b>唯一「越晚越热闹」</b>的。'},
+        {k:'一个细节', p:'春熙路地铁站 D1 出口有一家「快捷小站」（3450069003），07:30–23:30，站内取餐 —— 赶末班地铁的人的最后一口。'}
+      ],
+      route:{t:'春熙路 · 一条街五家店', steps:[
+        ['11:00','太古里 + IFS','熊猫屁股在 IFS 楼顶，拍完往小科甲巷走。'],
+        ['13:00','第一城店 · 3450069','IFS 对面二楼，窗边看小科甲巷的人流。'],
+        ['16:00','大科甲巷','老巷子，串串和糖油果子，比商场里有意思。'],
+        ['22:30','茂业百货店 · 3450339','00:00–23:59，凌晨的春熙路只有这里还亮着灯。']
+      ]},
+      note:'5 家店全在 350 米内，最远走 4 分钟。不用规划路线，绕一圈就行。'
+    }
+  };
+  var CITY_ORDER = ['gz_th','gz_ch','bj','sh','cd'];
+  var cityKey = 'gz_th';
+  var pathKey = null;
+
+  function $(id){ return document.getElementById(id); }
+
+  function tagsHTML(tags){
+    return tags.map(function(t){
+      return '<span class="tag' + (t[1] ? ' ' + t[1] : '') + '">' + t[0] + '</span>';
+    }).join('');
+  }
+  function minutes(end){
+    if(!end) return 0;
+    if(end === '24:00') return 1440;
+    return parseInt(end.slice(0,2),10) * 60 + parseInt(end.slice(3,5),10);
+  }
+  function latest(key){
+    var best = null;
+    CITIES[key].stores.forEach(function(s){
+      if(s.closed) return;
+      var m = minutes(s.end);
+      if(!best || m > best.m) best = {s:s, m:m};
+    });
+    return best;
+  }
+  function h24(key){
+    return CITIES[key].stores.filter(function(s){ return !s.closed && s.end === '24:00'; }).length;
+  }
+
+  function renderCity(key){
+    var c = CITIES[key];
+    $('cityNow').textContent = c.name;
+    $('storeList').innerHTML = c.stores.map(function(s,i){
+      return '<div class="store' + (s.closed ? ' closed' : '') + '">' +
+        '<div class="idx">' + (i + 1 < 10 ? '0' : '') + (i + 1) + '</div>' +
+        '<div><h4>' + s.n + '</h4><div class="addr">' + s.a + '</div>' +
+        '<div class="meta">' + tagsHTML(s.tags) + '</div></div>' +
+        '<div class="right"><div class="dist">' + s.d + '</div><div class="code">' + s.c + '</div></div>' +
+      '</div>';
+    }).join('');
+    $('cityInsights').innerHTML = c.insights.map(function(x){
+      return '<div class="insight"><div class="k">' + x.k + '</div>' +
+        (x.big ? '<div class="vs"><span class="a">' + x.big + '</span></div>' : '') +
+        '<p>' + x.p + '</p></div>';
+    }).join('');
+    $('cityRoute').innerHTML = '<h5>' + c.route.t + '</h5><div class="steps">' +
+      c.route.steps.map(function(st){
+        return '<div class="step"><div class="t">' + st[0] + '</div><div class="c"><strong>' +
+          st[1] + '</strong><span>' + st[2] + '</span></div></div>';
+      }).join('') + '</div>' +
+      (c.note ? '<div class="route-note">' + c.note + '</div>' : '');
+    Array.prototype.forEach.call(document.querySelectorAll('#cityChips .chip'), function(ch){
+      ch.classList.toggle('on', ch.dataset.city === key);
+    });
+  }
+
+  function renderCmp(){
+    $('cityCmp').innerHTML = CITY_ORDER.map(function(k){
+      var c = CITIES[k], n = h24(k), L = latest(k);
+      var pct = Math.round(n / c.stores.length * 100);
+      return '<div class="cmp-row">' +
+        '<div class="cmp-nm">' + c.name + '<span>' + c.stores.length + ' 家店</span></div>' +
+        '<div class="cmp-track"><div class="cmp-bar' + (n === 0 ? ' zero' : '') + '" style="width:' + Math.max(pct, 3) + '%"></div></div>' +
+        '<div class="cmp-v"><b>' + n + '/' + c.stores.length + '</b> · ' + (L ? (L.s.end === '24:00' ? '24h' : L.s.end) : '—') + '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  /* ---------- 2. 四选一方案 ---------- */
+  function planFor(p, key){
+    var c = CITIES[key];
+    var first = c.stores[0];
+
+    if(p === 'out'){
+      return {
+        kick:'想出门 · 一条走得完的路线',
+        h:c.route.t,
+        d:c.sub,
+        steps:c.route.steps.map(function(st){ return {t:st[0], h:st[1], s:st[2]}; }),
+        money:'¥20–30<small>人均，券后；价格基准取自广州天源路店实测</small>',
+        cta:{href:'#city', label:'看门店与路线'}
+      };
+    }
+
+    if(p === 'escape'){
+      if(key === 'gz_ch'){
+        return {
+          kick:'想逃离 · 出城，但要算好回程',
+          h:'从化山水带 · 23:00 前回城',
+          d:'从化 5 家里只有 1 家通宵（从城大道店 1400328），河滨广场店 22:59 就打烊。这条线的终点不是店，是回城的车。',
+          steps:CITIES.gz_ch.route.steps.map(function(st){ return {t:st[0], h:st[1], s:st[2]}; }),
+          money:'¥30–40<small>含往返车费，吃饭 ¥15–25</small>',
+          cta:{href:'#city', label:'看从化这 5 家店'}
+        };
+      }
+      if(key === 'gz_th'){
+        return {
+          kick:'想逃离 · 从天河出城',
+          h:'往北 60 公里，去从化',
+          d:'天河的店通宵，但通宵的店都长得一样。真想换一种节奏，就得离开这个区 —— 从化 5 家里只有 1 家通宵，晚上 11 点整座城就安静了。',
+          steps:[
+            {t:'08:00', h:'远达广场店 1400692', s:'七点开门，先吃完早餐再出发，别在路上饿着。'},
+            {t:'10:00', h:'流溪河绿道', s:'沿河骑行，秋天水面起雾，人少到能听见车轮声。'},
+            {t:'16:00', h:'街口老城 1401052', s:'老骑楼、菜市场、糖水铺。这家 22:59 关门。'},
+            {t:'21:00', h:'回城', s:'从化回广州的末班车集中在 21:00–23:00，别等最后一家店关门。'}
+          ],
+          money:'¥40–50<small>含往返车费，比待在天河多花 15 块</small>',
+          cta:{href:'#city', label:'切到从化，看 5 家店'},
+          switchCity:'gz_ch'
+        };
+      }
+      if(key === 'bj'){
+        return {
+          kick:'想逃离 · 这座城市 22:00 就熄灯',
+          h:'末班车倒计时：只剩一家店还亮着',
+          d:'五道口 5 家店没有一家通宵，四家 22:00 关门。想「逃离」其实只有一件事可做：把最后两小时，待在全街唯一有宵夜时段的那家店里。',
+          steps:[
+            {t:'21:00', h:'先去还开着的店', s:'华清、双清路、北语、保福寺桥四家 22:00 关门，21:00 是最后的点单窗口。'},
+            {t:'22:00', h:'转移优盛店 1950556', s:'全街唯一还亮着的，从五道口购物中心走过去 204 米。'},
+            {t:'22:14', h:'宵夜时段开始', s:'它的预约时段显示 22:14–22:46，这是这条街最后的营业窗口。'},
+            {t:'22:46', h:'撤', s:'23:00 闭店。回中关村东路打车，别指望有第二家。'}
+          ],
+          money:'¥25–35<small>一顿宵夜 + 打车</small>',
+          cta:{href:'#city', label:'看这 5 家店的营业时间'}
+        };
+      }
+      if(key === 'sh'){
+        return {
+          kick:'想逃离 · 从早六点待到午夜',
+          h:'末班车倒计时：一条街上 18 小时不断档',
+          d:'五角场没有通宵店，但营业区间是四城里最宽的：国定路三号湾 6 点开门，东方蓝海国际撑到 23:59。逃离的方式不是出城，是把一天拉长。',
+          steps:[
+            {t:'06:00', h:'国定路三号湾 1450207', s:'全城最早开门。早餐三件套，坐窗边看早高峰前的国定路。'},
+            {t:'14:00', h:'创智天地下壹站 1450325', s:'地下一层，下午茶时段 14:44–16:45，人最少。'},
+            {t:'22:14', h:'宵夜窗口', s:'还是这家，22:14–22:46 是五角场 22 点后唯一还能坐下的时段。'},
+            {t:'23:30', h:'转场东方蓝海 1450361', s:'23:59 关门，全城最晚。之后再想坐着，只能去便利店。'}
+          ],
+          money:'¥35–45<small>两顿 + 一杯，从早待到午夜</small>',
+          cta:{href:'#city', label:'看营业时间跨度'}
+        };
+      }
+      return {
+        kick:'想逃离 · 这座城市不用逃',
+        h:'凌晨三点的春熙路，还有灯',
+        d:'春熙路 5 家里 2 家是 00:00–23:59 的真通宵（茂业百货 3450339、壹购广场 3450043）。这里的「逃离」不是出城，是把时间往后推。',
+        steps:[
+          {t:'22:00', h:'联升巷 3450410', s:'大科甲巷里的店 23:59 关门，先吃，巷子比商场有意思。'},
+          {t:'23:30', h:'地铁站小站 3450069003', s:'07:30–23:30，站内取餐，赶末班地铁的最后一口。'},
+          {t:'00:00', h:'茂业百货 3450339', s:'00:00–23:59。凌晨的春熙路，只有这里还亮着灯。'},
+          {t:'02:00', h:'壹购广场 3450043', s:'同样 00:00–23:59，不想坐着就换个环境继续。'}
+        ],
+        money:'¥25–35<small>两顿小食 + 一杯</small>',
+        cta:{href:'#city', label:'看这两家通宵店'}
+      };
+    }
+
+    if(p === 'craft'){
+      return {
+        kick:'想折腾 · 一次厨房实验',
+        h:'复刻巨无霸：12 项清单 + 4 个翻车点',
+        d:'门店 ¥25.5，自己做一个约 ¥20。但省下的 5 块钱买不到时间 —— 建议当周末项目，不要当省钱手段。',
+        steps:[
+          {t:'01', h:'先买一个当对照', s:'去 ' + first.n + '（' + first.c + '）买一个，切开看层次，比看图片有用。'},
+          {t:'02', h:'煎 45 g 薄饼', s:'每片约 45 g，薄到透光。厚饼煎完会缩成肉丸。'},
+          {t:'03', h:'调巨无霸酱', s:'蛋黄酱 3 勺 + 番茄酱 1 勺 + 黄芥末 1 小勺 + 挤干的酸黄瓜碎。'},
+          {t:'04', h:'组装 11 层', s:'胚 → 酱 → 生菜 → 吉士 → 牛肉 → 中层面包 → 酱 → 酸黄瓜 → 洋葱 → 牛肉 → 底胚。'}
+        ],
+        money:'¥20 / 个<small>门店 ¥25.5，省 ¥5.5，花掉两小时</small>',
+        cta:{href:'#menu', label:'打开复刻清单'}
+      };
+    }
+
+    return {
+      kick:'想省钱 · 先把券领了再进店',
+      h:'券池拼单：3 人 ¥75.5，人均 ¥25.2',
+      d:'券按张发，每张锁死一个 SKU 的低价。人越多，能叠的低价商品越多 —— 所以人多时别各点各的，把券集中到一单。',
+      steps:[
+        {t:'01', h:'领券', s:'麦当劳 App 或微信「i麦当劳」→ 首页「麦麦省」，3 张现在就能领。'},
+        {t:'02', h:'数人', s:'2 / 3 / 4 / 6 人，人越多券池越划算。'},
+        {t:'03', h:'拼单', s:'每人 1 张 11.9 堡券 + 每 2 人 1 份 19.9 炸鸡任选 2 + 每人 1 张免费薯饼。'},
+        {t:'04', h:'发群里', s:'把券池表复制出去，让每个人知道自己该点什么。'}
+      ],
+      money:'人均 ¥25.2<small>3 人全单 ¥75.5，比各点三件套省 ¥25</small>',
+      cta:{href:'#coupon', label:'看券池与领券入口'}
+    };
+  }
+
+  function renderPlan(){
+    var box = $('planBox');
+    if(!pathKey){
+      box.className = 'plan empty';
+      box.innerHTML = '<div class="plan-head">' +
+        '<div class="kick">还没选</div>' +
+        '<h3>选一个方向，这里会长出一条具体的时间表</h3>' +
+        '<p class="pd">上面四张卡对应四种周末：出门走走、离开这座城、动手做点东西、把花销压下来。选完随时可以换，城市换了方案也会跟着变。</p>' +
+      '</div>';
+      return;
+    }
+    var p = planFor(pathKey, cityKey);
+    box.className = 'plan';
+    box.innerHTML =
+      '<div class="plan-head"><div>' +
+        '<div class="kick">' + p.kick + ' · ' + CITIES[cityKey].name + '</div>' +
+        '<h3>' + p.h + '</h3>' +
+        '<p class="pd">' + p.d + '</p>' +
+      '</div></div>' +
+      '<div class="plan-steps">' + p.steps.map(function(s){
+        return '<div class="pstep"><div class="t">' + s.t + '</div><div class="h">' + s.h + '</div><div class="s">' + s.s + '</div></div>';
+      }).join('') + '</div>' +
+      '<div class="plan-foot">' +
+        '<div class="money">' + p.money + '</div>' +
+        '<button class="btn primary" data-go="' + p.cta.href + '"' + (p.switchCity ? ' data-city="' + p.switchCity + '"' : '') + '>' + p.cta.label + '</button>' +
+        '<span class="re-pick">不满意？上面换个方向，或者换座城市</span>' +
+      '</div>';
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('#cityChips .chip'), function(ch){
+    ch.addEventListener('click', function(){
+      cityKey = ch.dataset.city;
+      renderCity(cityKey);
+      renderPlan();
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('#pathCards .path'), function(pc){
+    pc.addEventListener('click', function(){
+      pathKey = pc.dataset.path;
+      Array.prototype.forEach.call(document.querySelectorAll('#pathCards .path'), function(x){
+        x.classList.toggle('on', x === pc);
+      });
+      renderPlan();
+    });
+  });
+  $('planBox').addEventListener('click', function(e){
+    var b = e.target.closest('[data-go]');
+    if(!b) return;
+    if(b.dataset.city){
+      cityKey = b.dataset.city;
+      renderCity(cityKey);
+      renderPlan();
+    }
+    var t = document.querySelector(b.dataset.go);
+    if(t) t.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+  $('csBack').addEventListener('click', function(){
+    var s = document.getElementById('start');
+    if(s) s.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+
+  renderCity('gz_th');
+  renderCmp();
+  renderPlan();
+
+  /* ---------- 2. 导航高亮 ---------- */
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+  var secs = links.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  function onScroll(){
+    var y = window.scrollY + 140, cur = secs[0];
+    secs.forEach(function(s){ if(s.offsetTop <= y) cur = s; });
+    links.forEach(function(a){
+      a.classList.toggle('on', a.getAttribute('href') === '#' + cur.id);
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('load', onScroll);
+  window.addEventListener('resize', onScroll);
+  onScroll();
+  requestAnimationFrame(onScroll);
+
+  /* ---------- 3. 复刻清单进度 ---------- */
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('#checklist input'));
+  var prog = document.getElementById('prog');
+  function updProg(){
+    var n = boxes.filter(function(b){ return b.checked; }).length;
+    if(n === boxes.length){
+      prog.innerHTML = '<b>全部备齐，可以开火了</b>';
+    }else{
+      prog.innerHTML = '已备齐 <b>' + n + '</b> / ' + boxes.length;
+    }
+  }
+  boxes.forEach(function(b){ b.addEventListener('change', updProg); });
+  updProg();
+
+  /* ---------- 4. 随心配 96 组合 ---------- */
+  var BLUE = [
+    {n:'双层吉士汉堡',            d:0,  t:'默认 · 经典双层'},
+    {n:'马来咖喱风味薄皮肉骨鸡 3 块', d:0,  t:'新品 · 咖喱香'},
+    {n:'高达吉士双牛堡',          d:-1, t:'降 1 元 · 双牛双芝士'},
+    {n:'麦香鱼',                  d:0,  t:'不辣 · 鳕鱼排'},
+    {n:'那么大鸡排（椒盐风味）',   d:-1, t:'降 1 元 · 纯肉'},
+    {n:'麦乐鸡 5 块',             d:-1, t:'降 1 元 · 蘸酱党'},
+    {n:'麦香鸡',                  d:-1, t:'降 1 元 · 轻量'},
+    {n:'小薯条',                  d:-1, t:'降 1 元 · 只吃咸的'}
+  ];
+  var PINK = [
+    {n:'可乐麦炫酷',      d:0, t:'默认 · 带冰沙'},
+    {n:'阳光柠檬红茶中杯', d:0, t:'解腻'},
+    {n:'可乐中杯',        d:0, t:'最稳'},
+    {n:'小杯玉米杯',      d:0, t:'不喝甜的选这个'},
+    {n:'香芋派',          d:0, t:'热甜'},
+    {n:'迷你草莓新地',    d:0, t:'冷甜'},
+    {n:'迷你朱古力新地',  d:0, t:'冷甜'},
+    {n:'鲜萃冰咖',        d:0, t:'提神'},
+    {n:'菠萝派',          d:0, t:'热甜'},
+    {n:'无糖可乐麦炫酷',  d:0, t:'零糖'},
+    {n:'锡兰红茶',        d:0, t:'热饮'},
+    {n:'无糖可口可乐中杯', d:0, t:'零糖'}
+  ];
+  var BASE = 14.9;
+  var rolls = 0;
+  var blueName = document.getElementById('blueName');
+  var pinkName = document.getElementById('pinkName');
+  var blueDiff = document.getElementById('blueDiff');
+  var pinkDiff = document.getElementById('pinkDiff');
+  var rollStat = document.getElementById('rollStat');
+  var lastB = null, lastP = null;
+
+  function pickDifferent(arr, last){
+    if(arr.length < 2) return arr[0];
+    var c;
+    do { c = arr[Math.floor(Math.random() * arr.length)]; } while (c === last);
+    return c;
+  }
+  function paint(b, p){
+    blueName.textContent = b.n;
+    pinkName.textContent = p.n;
+    blueDiff.textContent = (b.d === 0 ? '基准价 +¥0' : '降 ¥' + Math.abs(b.d)) + ' · ' + b.t;
+    pinkDiff.textContent = (p.d === 0 ? '基准价 +¥0' : '降 ¥' + Math.abs(p.d)) + ' · ' + p.t;
+    var price = (BASE + b.d + p.d).toFixed(1);
+    rolls++;
+    rollStat.textContent = '第 ' + rolls + ' 次组合 · 本次实付 ¥' + price +
+      ' · 已覆盖 ' + rolls + ' / 96 种（不重复连摇）';
+  }
+  function roll(cheapOnly){
+    var poolB = cheapOnly ? BLUE.filter(function(x){ return x.d < 0; }) : BLUE;
+    var b = pickDifferent(poolB, lastB);
+    var p = pickDifferent(PINK, lastP);
+    lastB = b; lastP = p;
+    paint(b, p);
+  }
+  document.getElementById('rollBtn').addEventListener('click', function(){ roll(false); });
+  document.getElementById('cheapBtn').addEventListener('click', function(){ roll(true); });
+  document.getElementById('resetBtn').addEventListener('click', function(){
+    lastB = BLUE[0]; lastP = PINK[0];
+    rolls = 0;
+    paint(BLUE[0], PINK[0]);
+    rollStat.textContent = '已回到默认组合 · 双层吉士汉堡 + 可乐麦炫酷 = ¥14.9';
+  });
+
+  /* ---------- 5. 券池计算器 ---------- */
+  var P = {
+    couponBurger: 11.9,
+    chicken2: 19.9,
+    set3: 33.5,
+    soloBurger: 22.5,
+    soloChicken: 15,
+    soloFries: 13.5
+  };
+  var people = 3;
+  var seg = document.getElementById('peopleSeg');
+  var out = document.getElementById('calcOut');
+  var bar = document.getElementById('savingBar');
+
+  function yuan(x){ return '¥' + (Math.round(x * 10) / 10).toFixed(1); }
+
+  function render(){
+    var n = people;
+    var chickenPacks = Math.ceil(n / 2);
+    var t1 = P.couponBurger * n + P.chicken2 * chickenPacks;
+    var t2 = P.set3 * n;
+    var t3 = (P.soloBurger + P.soloChicken + P.soloFries) * n;
+
+    out.innerHTML =
+      '<div class="out-card best">' +
+        '<div class="lbl">券池拼单 <span class="badge">最省</span></div>' +
+        '<div class="big">' + yuan(t1 / n) + '<small> / 人</small></div>' +
+        '<div class="sub">全单 ' + yuan(t1) + ' · ' + n + ' 人共 ' + (n + chickenPacks * 2) + ' 件</div>' +
+        '<ul>' +
+          '<li><span>11.9 麦辣鸡腿堡券</span><i>×' + n + ' = ' + yuan(P.couponBurger * n) + '</i></li>' +
+          '<li><span>19.9 王牌炸鸡任选 2</span><i>×' + chickenPacks + ' = ' + yuan(P.chicken2 * chickenPacks) + '</i></li>' +
+          '<li><span>免费脆薯饼</span><i>×' + n + ' = ¥0</i></li>' +
+        '</ul>' +
+      '</div>' +
+      '<div class="out-card">' +
+        '<div class="lbl">各点三件套 <span style="font-size:10px;color:#B4ABA0">省心</span></div>' +
+        '<div class="big">' + yuan(P.set3) + '<small> / 人</small></div>' +
+        '<div class="sub">全单 ' + yuan(t2) + ' · 每人一份麦辣鸡腿堡三件套</div>' +
+        '<ul>' +
+          '<li><span>麦辣鸡腿堡三件套</span><i>×' + n + ' = ' + yuan(t2) + '</i></li>' +
+          '<li><span>不用领券、不用凑单</span><i>—</i></li>' +
+        '</ul>' +
+      '</div>' +
+      '<div class="out-card">' +
+        '<div class="lbl">纯单点 <span style="font-size:10px;color:#B4ABA0">对照</span></div>' +
+        '<div class="big">' + yuan(t3 / n) + '<small> / 人</small></div>' +
+        '<div class="sub">全单 ' + yuan(t3) + ' · 堡 + 炸鸡 + 中薯各一份</div>' +
+        '<ul>' +
+          '<li><span>麦辣鸡腿堡 + 脆汁鸡 + 中薯</span><i>×' + n + '</i></li>' +
+          '<li><span>没有任何组合折扣</span><i>—</i></li>' +
+        '</ul>' +
+      '</div>';
+
+    var save = t2 - t1;
+    var pct = Math.round(save / t2 * 100);
+    bar.innerHTML =
+      '<b>省 ' + yuan(save) + '</b>' +
+      '<span>券池拼单比各点三件套少花 ' + yuan(save) + '（' + pct + '%），人均从 ' +
+      yuan(t2 / n) + ' 降到 ' + yuan(t1 / n) + '。' +
+      (n >= 4 ? '人数到 ' + n + ' 人时，可以再加一份 BFF 四宫格小食盘 ¥39.8，人均只涨 ' + yuan(39.8 / n) + '。' : '') +
+      '</span>';
+  }
+
+  seg.addEventListener('click', function(e){
+    var b = e.target.closest('button');
+    if(!b) return;
+    Array.prototype.forEach.call(seg.querySelectorAll('button'), function(x){
+      x.classList.toggle('on', x === b);
+    });
+    people = parseInt(b.dataset.n, 10);
+    render();
+  });
+  render();
+
+  /* ---------- 6. 复制 ---------- */
+  var toastTimer;
+  function toast(msg){
+    var t = $('toast');
+    t.textContent = msg;
+    t.classList.add('on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ t.classList.remove('on'); }, 2200);
+  }
+  function legacyCopy(txt, cb){
+    var ta = document.createElement('textarea');
+    ta.value = txt;
+    ta.style.position = 'fixed';
+    ta.style.top = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try{ document.execCommand('copy'); cb(); }
+    catch(err){ toast('复制失败，请手动选择文本'); }
+    document.body.removeChild(ta);
+  }
+  function copyText(txt, msg){
+    var ok = function(){ toast(msg); };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(ok, function(){ legacyCopy(txt, ok); });
+    }else{
+      legacyCopy(txt, ok);
+    }
+  }
+
+  $('copyClaim').addEventListener('click', function(){
+    copyText(
+      '【麦当劳领券 · 四个官方入口】\n' +
+      '1. 官方 App：应用商店搜「麦当劳」→ 登录会员 → 首页「麦麦省」→ 一键领取\n' +
+      '2. 微信：搜小程序「i麦当劳」→ 首页「麦麦省」\n' +
+      '3. 支付宝：搜「麦当劳」生活号 → 首页领券 banner\n' +
+      '4. 到店扫码点餐 → 页面底部「领券」\n' +
+      '当前可领：11.9 麦辣鸡腿堡 / 19.9 王牌炸鸡任选 2 / 免费脆薯饼\n' +
+      '提醒：券有门店和场景围栏，进店前在卡包确认「可用门店」。',
+      '四步已复制，粘给自己就行'
+    );
+  });
+
+  $('copyPool').addEventListener('click', function(){
+    var n = people;
+    var chickenPacks = Math.ceil(n / 2);
+    var t1 = P.couponBurger * n + P.chicken2 * chickenPacks;
+    var t2 = P.set3 * n;
+    copyText(
+      '【周末券池 · ' + n + ' 人】\n' +
+      '券池拼单：全单 ' + yuan(t1) + '，人均 ' + yuan(t1 / n) + '\n' +
+      ' · 11.9 麦辣鸡腿堡券 ×' + n + ' = ' + yuan(P.couponBurger * n) + '\n' +
+      ' · 19.9 王牌炸鸡任选 2 ×' + chickenPacks + ' = ' + yuan(P.chicken2 * chickenPacks) + '\n' +
+      ' · 免费脆薯饼 ×' + n + ' = ¥0\n' +
+      '对照：各点三件套 全单 ' + yuan(t2) + '，人均 ' + yuan(t2 / n) + '\n' +
+      '省 ' + yuan(t2 - t1) + '（' + Math.round((t2 - t1) / t2 * 100) + '%）\n' +
+      '领券：麦当劳 App 或微信「i麦当劳」→ 首页「麦麦省」→ 一键领取',
+      '券池表已复制，直接发群里'
+    );
+  });
+})();
+</script>
+<div class="toast" id="toast"></div>
+</body>
+</html>
